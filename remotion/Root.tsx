@@ -9,7 +9,6 @@ import {
   VIDEO_WIDTH,
 } from "../types/constants";
 import { NextLogo } from "./MyComp/NextLogo";
-import SampleComponent from "../components/SampleComponent";
 
 export const RemotionRoot: React.FC = () => {
   return (
