@@ -31,13 +31,13 @@ const Home: NextPage = () => {
 
   const pilihanIndexBahasa = [0, 1]
   const [indexBahasa, setIndexBahasa] = useState(pilihanIndexBahasa[0])
-  const [firstLoad, setFirstLoad] = useState(true)
+  // const [firstLoad, setFirstLoad] = useState(true)
 
   return (
     <main className="flex min-h-screen flex-col bg-white">
       <Header index={indexBahasa} actionIndex={(index: number)=>{
         setIndexBahasa(index)
-        setFirstLoad(true)
+        // setFirstLoad(true)
       }}/>
         <div className="grid grid-cols-2 mt-16 mx-44">
           <div className="">
