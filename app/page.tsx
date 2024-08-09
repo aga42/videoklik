@@ -3,19 +3,12 @@
 import { Player } from "@remotion/player";
 import type { NextPage } from "next";
 import React, { useMemo, useState } from "react";
-import { Main } from "../remotion/MyComp/Main";
 import {
   CompositionProps,
-  defaultMyCompProps,
-  DURATION_IN_FRAMES,
-  VIDEO_FPS,
-  VIDEO_HEIGHT,
-  VIDEO_WIDTH,
+  defaultMyCompProps
 } from "../types/constants";
 import { z } from "zod";
 import { RenderControls } from "../components/RenderControls";
-import { Tips } from "../components/Tips";
-import { Spacing } from "../components/Spacing";
 import SampleComponent from "../components/SampleComponent";
 import Header from "../components/Header";
 
