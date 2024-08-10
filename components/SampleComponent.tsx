@@ -21,7 +21,7 @@ export const SampleComponent = ({ title, prefix, suffix }: z.infer<typeof Compos
         backgroundColor: "#22c943",
       }}
     >
-    <Audio src={staticFile("moneyrise.mp3")} />
+    {/* <Audio src={staticFile("moneyrise.mp3")} /> */}
       <b>{prefix} { frame >= (durationInFrames-31) ? destinateValue.toLocaleString('id-ID') : result.toLocaleString('id-ID')} {suffix}</b> 
     </AbsoluteFill>
     </div>
