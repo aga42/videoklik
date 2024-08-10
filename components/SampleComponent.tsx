@@ -1,6 +1,6 @@
 "use client";
 
-import { AbsoluteFill, useCurrentFrame, useVideoConfig, staticFile, Audio } from "remotion";
+import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
 import { CompositionProps } from "../types/constants";
 import { z } from "zod";
  
