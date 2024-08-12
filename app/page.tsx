@@ -9,16 +9,23 @@ import {
 } from "../types/constants";
 import { z } from "zod";
 import { RenderControls } from "../components/RenderControls";
-import SampleComponent from "../components/SampleComponent";
+// import SampleComponent from "../remotion/OtherComp/SampleComponent";
 import Header from "../components/Header";
+import Main from "../remotion/MyComp/Main";
+// import { SampleComposition } from "../components/SampleComposition";
 
 const Home: NextPage = () => {
+  // const [text, setText] = useState<string>(defaultMyCompProps.title);
+
+  // const [prefix, setPrefix] = useState<string>(defaultMyCompProps.prefix);
+  // const [suffix, setSuffix] = useState<string>(defaultMyCompProps.suffix);
+  // const [duration, setDuration] = useState<string>(defaultMyCompProps.duration);
+  
   const [text, setText] = useState<string>(defaultMyCompProps.title);
 
-  const [prefix, setPrefix] = useState<string>(defaultMyCompProps.prefix);
-  const [suffix, setSuffix] = useState<string>(defaultMyCompProps.suffix);
-  const [duration, setDuration] = useState<string>(defaultMyCompProps.duration);
-
+  const [prefix, setPrefix] = useState<string>("Rp");
+  const [suffix, setSuffix] = useState<string>("");
+  const [duration, setDuration] = useState<string>("4");
 
   const inputProps: z.infer<typeof CompositionProps> = useMemo(() => {
     return {
@@ -43,7 +50,7 @@ const Home: NextPage = () => {
           <div className="">
             <Player
             className=" mx-auto"
-                  component={SampleComponent}
+                  component={Main}
                   inputProps={inputProps}
                   durationInFrames={ duration == "" ? 120 : Number(duration)*30}
                   fps={30}

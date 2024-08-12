@@ -7,25 +7,33 @@ import {
 } from "../types/schema";
 import { CompositionProps } from "../types/constants";
 import { ApiResponse } from "../helpers/api-response";
+// import {Res} from "remotion";
 
 const makeRequest = async <Res>(
   endpoint: string,
   body: unknown,
 ): Promise<Res> => {
-  const result = await fetch(endpoint, {
-    method: "post",
-    body: JSON.stringify(body),
-    headers: {
-      "Content-Type": "application/json",
-      // "Access-Control-Allow-Origin": "*",
-    },
-  });
-  const json = (await result.json()) as ApiResponse<Res>;
-  if (json.type === "error") {
-    throw new Error(json.message);
-  }
 
-  return json.data;
+  try {
+    const result = await fetch(endpoint, {
+      method: "post",
+      body: JSON.stringify(body),
+      headers: {
+        "Content-Type": "application/json",
+        // "Access-Control-Allow-Origin": "*",
+      },
+    });
+    const json = (await result.json()) as ApiResponse<Res>;
+    if (json.type === "error") {
+      throw new Error(json.message);
+    }
+  
+    
+    return json.data;
+  } catch (error) {
+    console.log(error)
+    throw new Error("");
+  }
 };
 
 export const renderVideo = async ({
