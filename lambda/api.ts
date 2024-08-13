@@ -22,7 +22,7 @@ const makeRequest = async <Res>(
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
       },
-      mode: "no-cors",
+      mode: "cors",
     });
     const json = (await result.json()) as ApiResponse<Res>;
     if (json.type === "error") {
