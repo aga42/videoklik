@@ -29,8 +29,11 @@ const makeRequest = async <Res>(
     // const json = (await result.json()) as ApiResponse<Res>;
 
     const string = (await result.text());
+    console.log(`pertama ${string}`)
     const jsonFirst = string === "" ? {} : JSON.parse(string);
+    console.log(`kedua ${jsonFirst}`)
     const json = (jsonFirst) as ApiResponse<Res>;
+    console.log(`ketiga ${json}`)
 
     if (json.type === "error") {
       throw new Error(json.message);
