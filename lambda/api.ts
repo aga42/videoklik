@@ -22,8 +22,9 @@ const makeRequest = async <Res>(
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "POST",
-        "Access-Control-Allow-Headers": "Content-Type, Authorization"
+        "Access-Control-Allow-Headers": "Content-Type, Origin, Authorization"
       },
+      mode: "no-cors",
     });
     const json = (await result.json()) as ApiResponse<Res>;
     if (json.type === "error") {
