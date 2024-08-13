@@ -47,7 +47,7 @@ const Home: NextPage = () => {
         // setFirstLoad(true)
       }}/>
         <div className="sm:grid sm:grid-cols-2 mt-16 sm:mx-44">
-          <div className="">
+          <div>
             <Player
             className=" mx-auto"
                   component={Main}
@@ -59,7 +59,7 @@ const Home: NextPage = () => {
                   style={{
                     // Can't use tailwind class for width since player's default styles take presedence over tailwind's,
                     // but not over inline styles
-                    width: "50%",
+                    width: "60%",
                   }}
                   controls
                   autoPlay
