@@ -20,9 +20,9 @@ const makeRequest = async <Res>(
       body: JSON.stringify(body),
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "*",
-        "Access-Control-Allow-Headers": "content-type,authorization",
+        // "Access-Control-Allow-Origin": "*",
+        // "Access-Control-Allow-Methods": "*",
+        // "Access-Control-Allow-Headers": "content-type,authorization",
       },
     });
     const json = (await result.json()) as ApiResponse<Res>;
