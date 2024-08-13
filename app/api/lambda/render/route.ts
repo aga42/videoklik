@@ -38,8 +38,8 @@ export const POST = executeApi<RenderMediaOnLambdaOutput, typeof RenderRequest>(
       serveUrl: SITE_NAME,
       composition: body.id,
       inputProps: body.inputProps,
-      framesPerLambda: 4,
-      // framesPerLambda: 10,
+      // framesPerLambda: 4,
+      framesPerLambda: 30,
       downloadBehavior: {
         type: "download",
         fileName: "video.mp4",

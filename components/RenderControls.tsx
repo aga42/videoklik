@@ -69,8 +69,8 @@ export const RenderControls: React.FC<{
           <Spacing></Spacing>
           <div className=" mt-8 mx-auto">
               <Button
-                // disabled={state.status === "invoking"}
-                disabled={true}
+                disabled={state.status === "invoking"}
+                // disabled={true}
                 loading={state.status === "invoking"}
                 onClick={renderMedia}
               >

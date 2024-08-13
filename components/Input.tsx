@@ -1,4 +1,5 @@
 import React, { useCallback } from "react";
+// import { setDuration } from "../types/constants";
 
 export const Input: React.FC<{
   text: string;
@@ -7,7 +8,8 @@ export const Input: React.FC<{
   disabled?: boolean;
   type: string;
   maxLength: number;
-}> = ({ text, setText, placeholder, disabled, type, maxLength }) => {
+  isDuration?: boolean;
+}> = ({ text, setText, placeholder, disabled, type, maxLength, isDuration }) => {
   const onChange: React.ChangeEventHandler<HTMLInputElement> = useCallback(
     (e) => {
       // setText(e.currentTarget.value);

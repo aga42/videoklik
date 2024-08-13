@@ -11,10 +11,10 @@ import {
   COMP_NAME
 } from "../types/constants";
 import { NextLogo } from "./MyComp/NextLogo";
-// import SampleComponent from "../remotion/OtherComp/SampleComponent";
 import Main from "./MyComp/Main";
 
 export const RemotionRoot: React.FC = () => {
+
   return (
     <>
       {/* <Composition
@@ -29,7 +29,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="NextLogo"
         component={NextLogo}
-        durationInFrames={2}
+        durationInFrames={1}
         fps={1}
         width={140}
         height={140}
@@ -40,8 +40,8 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id={COMP_NAME}
         component={Main}
-        durationInFrames={2}
-        fps={1}
+        durationInFrames={120}
+        fps={30}
         width={720}
         height={1280}
         schema={CompositionProps}

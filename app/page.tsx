@@ -49,7 +49,7 @@ const Home: NextPage = () => {
         <div className="sm:grid sm:grid-cols-2 mt-16 sm:mx-44">
           <div>
             <Player
-            className=" mx-auto"
+                  className=" mx-auto"
                   component={Main}
                   inputProps={inputProps}
                   durationInFrames={ duration == "" || duration == "0" ? 30 : Number(duration)*30}
