@@ -28,7 +28,7 @@ const makeRequest = async <Res>(
     const json = (await result.json()) as ApiResponse<Res>;
 
     // const string = (await result.text());
-    console.log(`pertama ${json}`)
+    // console.log(`pertama ${json}`)
     // const jsonFirst = string === "" ? {} : JSON.parse(string);
     // console.log(`kedua ${jsonFirst}`)
     // const json = (jsonFirst) as ApiResponse<Res>;
