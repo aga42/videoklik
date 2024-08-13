@@ -24,8 +24,14 @@ const makeRequest = async <Res>(
         "Access-Control-Allow-Methods": "*",
         "Access-Control-Allow-Headers": "content-type,authorization",
       },
+      mode: "no-cors",
     });
-    const json = (await result.json()) as ApiResponse<Res>;
+    // const json = (await result.json()) as ApiResponse<Res>;
+
+    const string = (await result.text());
+    const jsonFirst = string === "" ? {} : JSON.parse(string);
+    const json = (jsonFirst) as ApiResponse<Res>;
+
     if (json.type === "error") {
       throw new Error(json.message);
     }
