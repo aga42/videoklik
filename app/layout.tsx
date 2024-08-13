@@ -3,8 +3,8 @@ import { Metadata } from "next";
 import { Suspense } from 'react'
 
 export const metadata: Metadata = {
-  title: "Remotion and Next.js",
-  description: "Remotion and Next.js",
+  title: "Videoklik",
+  description: "Tinggal klak - klik jadi video",
 };
 
 export default function RootLayout({
@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="shortcut icon" href="/images/favicon.ico" />
+        <link rel="shortcut icon" href="favicon.ico" />
       </head>
       <body>
       <Suspense fallback={<div>Loading...</div>}>

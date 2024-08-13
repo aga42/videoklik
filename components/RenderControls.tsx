@@ -34,6 +34,8 @@ export const RenderControls: React.FC<{
             setText={setPrefix}
             text={prefix}
             placeholder="Prefix"
+            type="text"
+            maxLength={3}
           ></Input>
           <div className=" my-4">
             <Input
@@ -41,6 +43,8 @@ export const RenderControls: React.FC<{
               setText={setSuffix}
               text={suffix}
               placeholder="Suffix"
+              type="text"
+              maxLength={3}
             ></Input>
           </div>
           <Input
@@ -48,6 +52,8 @@ export const RenderControls: React.FC<{
             setText={setDuration}
             text={duration}
             placeholder="Duration"
+            type="number"
+            maxLength={1}
           ></Input>
           <div className=" my-4">
             <Input
@@ -55,13 +61,16 @@ export const RenderControls: React.FC<{
               setText={setText}
               text={text}
               placeholder="Value"
+              type="number"
+              maxLength={7}
             ></Input>
           </div>
           
           <Spacing></Spacing>
           <div className=" mt-8 mx-auto">
               <Button
-                disabled={state.status === "invoking"}
+                // disabled={state.status === "invoking"}
+                disabled={true}
                 loading={state.status === "invoking"}
                 onClick={renderMedia}
               >

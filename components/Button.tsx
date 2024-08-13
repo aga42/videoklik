@@ -17,7 +17,7 @@ const ButtonForward: React.ForwardRefRenderFunction<
     <button
       ref={ref}
       className={cn(
-        "px-4 border-indigo-600 border rounded-geist bg-indigo-600 text-white h-10 font-medium transition-all duration-150 ease-in-out inline-flex items-center appearance-none text-sm hover:bg-indigo-700 hover:text-white hover:border-indigo-700 disabled:bg-button-disabled-color disabled:text-disabled-text-color disabled:border-unfocused-border-color disabled:cursor-not-allowed",
+        "px-4 border-fuchsia-600 border rounded-geist bg-fuchsia-600 text-white h-10 font-medium transition-all duration-150 ease-in-out inline-flex items-center appearance-none text-sm hover:bg-fuchsia-700 hover:text-white hover:border-fuchsia-700 disabled:bg-button-disabled-color disabled:text-disabled-text-color disabled:border-unfocused-border-color disabled:cursor-not-allowed",
         secondary
           ? "bg-background text-foreground border-unfocused-border-color"
           : undefined,

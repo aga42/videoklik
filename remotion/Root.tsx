@@ -29,8 +29,8 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="NextLogo"
         component={NextLogo}
-        durationInFrames={6}
-        fps={2}
+        durationInFrames={2}
+        fps={1}
         width={140}
         height={140}
         defaultProps={{
@@ -40,8 +40,8 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id={COMP_NAME}
         component={Main}
-        durationInFrames={4}
-        fps={2}
+        durationInFrames={2}
+        fps={1}
         width={720}
         height={1280}
         schema={CompositionProps}

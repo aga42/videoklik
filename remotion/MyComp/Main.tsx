@@ -83,7 +83,7 @@ export const Main = ({ title, prefix, suffix }: z.infer<typeof CompositionProps>
       }}
     >
     {/* <Audio src={staticFile("moneyrise.mp3")} /> */}
-      <b>{prefix} { frame >= (durationInFrames-31) ? destinateValue.toLocaleString('id-ID') : result.toLocaleString('id-ID')} {suffix}</b> 
+      <p className=" text-white"><b>{prefix} { frame >= (durationInFrames-31) ? destinateValue.toLocaleString('id-ID') : result.toLocaleString('id-ID')} {suffix}</b></p> 
     </AbsoluteFill>
     </div>
   );

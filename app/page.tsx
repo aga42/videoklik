@@ -46,13 +46,13 @@ const Home: NextPage = () => {
         setIndexBahasa(index)
         // setFirstLoad(true)
       }}/>
-        <div className="grid grid-cols-2 mt-16 mx-44">
+        <div className="sm:grid sm:grid-cols-2 mt-16 sm:mx-44">
           <div className="">
             <Player
             className=" mx-auto"
                   component={Main}
                   inputProps={inputProps}
-                  durationInFrames={ duration == "" ? 120 : Number(duration)*30}
+                  durationInFrames={ duration == "" || duration == "0" ? 30 : Number(duration)*30}
                   fps={30}
                   compositionHeight={1280}
                   compositionWidth={720}
@@ -67,7 +67,7 @@ const Home: NextPage = () => {
                 />
           </div>
           
-          <div className=" w-1/2 mx-auto">
+          <div className=" w-fit sm:w-1/2 max-w-max mx-auto sm:mt-0 mt-8 sm:mb-0 mb-8">
             <RenderControls
               text={text}
               setText={setText}

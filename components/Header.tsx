@@ -40,7 +40,7 @@ const Header = ({index, actionIndex}: HeaderProps) => {
                     <div className="flex justify-between">
                         <a href="/">
                             <img
-                                src="logo-jurnalquran.png" 
+                                src="/images/logo-videoklik.png" 
                                 width={180} 
                                 height={50}
                                 alt="Videoklik logo"
@@ -70,7 +70,7 @@ const Header = ({index, actionIndex}: HeaderProps) => {
                             </a> */}
                             <div className="flex items-center justify-center mt-6" data-twe-dropdown-ref>
                                 <button
-                                    className="flex items-center whitespace-nowrap rounded bg-indigo-600 px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-indigo-700 hover:shadow-primary-2 focus:bg-indigo-700 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-indigo-700 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+                                    className="flex items-center whitespace-nowrap rounded bg-fuchsia-600 px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-fuchsia-700 hover:shadow-primary-2 focus:bg-fuchsia-700 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-fuchsia-700 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
                                     type="button"
                                     id="dropdownMenuLargeButton"
                                     data-twe-dropdown-toggle-ref
