@@ -94,7 +94,6 @@ export const useRendering = (
         }
       }
     } catch (err) {
-      console.log(err)
       setState({
         status: "error",
         error: err as Error,
