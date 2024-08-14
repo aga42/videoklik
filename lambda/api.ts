@@ -62,10 +62,10 @@ export const renderVideo = async ({
     inputProps,
   };
 
-  // return makeRequest<RenderMediaOnLambdaOutput>("/api/lambda/render", body);
+  return makeRequest<RenderMediaOnLambdaOutput>("/api/lambda/render", body);
   // return makeRequest<RenderMediaOnLambdaOutput>("https://main.d1t2r37kmmw96.amplifyapp.com/api/lambda/render", body);
   // return makeRequest<RenderMediaOnLambdaOutput>("https://5mt6sywv5a.execute-api.us-east-1.amazonaws.com/FirstDeploy", body);
-  return makeRequest<RenderMediaOnLambdaOutput>("https://ulmmtt5bustyydwjumrpd34w7a0ndtnb.lambda-url.us-east-1.on.aws/", body);
+  // return makeRequest<RenderMediaOnLambdaOutput>("https://ulmmtt5bustyydwjumrpd34w7a0ndtnb.lambda-url.us-east-1.on.aws/", body);
 };
 
 export const getProgress = async ({
@@ -80,8 +80,8 @@ export const getProgress = async ({
     bucketName,
   };
 
-  // return makeRequest<ProgressResponse>("/api/lambda/progress", body);
+  return makeRequest<ProgressResponse>("/api/lambda/progress", body);
   // return makeRequest<ProgressResponse>("https://main.d1t2r37kmmw96.amplifyapp.com/api/lambda/progress", body);
   // return makeRequest<ProgressResponse>("https://5mt6sywv5a.execute-api.us-east-1.amazonaws.com/FirstDeploy", body);
-  return makeRequest<ProgressResponse>("https://ulmmtt5bustyydwjumrpd34w7a0ndtnb.lambda-url.us-east-1.on.aws/", body);
+  // return makeRequest<ProgressResponse>("https://ulmmtt5bustyydwjumrpd34w7a0ndtnb.lambda-url.us-east-1.on.aws/", body);
 };
