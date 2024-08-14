@@ -11,7 +11,7 @@ export const POST = executeApi<RenderMediaOnLambdaOutput, typeof RenderRequest>(
   RenderRequest,
   async (req, body) => {
     if (
-      // !process.env.AWS_ACCESS_KEY_ID &&
+      !process.env.AWS_ACCESS_KEY_ID &&
       !process.env.REMOTION_AWS_ACCESS_KEY_ID
     ) {
       throw new TypeError(
@@ -19,7 +19,7 @@ export const POST = executeApi<RenderMediaOnLambdaOutput, typeof RenderRequest>(
       );
     }
     if (
-      // !process.env.AWS_SECRET_ACCESS_KEY &&
+      !process.env.AWS_SECRET_ACCESS_KEY &&
       !process.env.REMOTION_AWS_SECRET_ACCESS_KEY
     ) {
       throw new TypeError(
