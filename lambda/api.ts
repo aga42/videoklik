@@ -24,9 +24,9 @@ const makeRequest = async <Res>(
         // "Access-Control-Allow-Methods": "*",
         // "Access-Control-Allow-Headers": "content-type,authorization",
 
-        "Access-Control-Allow-Headers" : "Content-Type",
-        "Access-Control-Allow-Origin": "*", // Allow from anywhere 
-        "Access-Control-Allow-Methods": "POST" // Allow only POST request 
+        // "Access-Control-Allow-Headers" : "Content-Type",
+        // "Access-Control-Allow-Origin": "*", // Allow from anywhere 
+        // "Access-Control-Allow-Methods": "POST" // Allow only POST request 
       },
     });
     const json = (await result.json()) as ApiResponse<Res>;
