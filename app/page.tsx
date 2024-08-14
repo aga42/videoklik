@@ -46,7 +46,7 @@ const Home: NextPage = () => {
         setIndexBahasa(index)
         // setFirstLoad(true)
       }}/>
-        <div className="sm:grid sm:grid-cols-2 mt-16 sm:mx-44">
+        <div className="sm:grid sm:grid-cols-2 mt-16 sm:mx-44 sm:mb-16">
           <div>
             <Player
                   className=" mx-auto"

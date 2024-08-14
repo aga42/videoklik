@@ -47,15 +47,15 @@ export const RenderControls: React.FC<{
               maxLength={3}
             ></Input>
           </div>
-          <Input
+          {/* <Input
             disabled={state.status === "invoking"}
             setText={setDuration}
             text={duration}
             placeholder="Duration"
             type="number"
             maxLength={1}
-          ></Input>
-          <div className=" my-4">
+          ></Input> */}
+          <div className=" mb-4">
             <Input
               disabled={state.status === "invoking"}
               setText={setText}

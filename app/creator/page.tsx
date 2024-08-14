@@ -24,7 +24,7 @@ const Creator = () => {
             )
         }else {
             return (
-                <p className=' text-justify text-base text-gray-500 items-center mt-10 md:mx-64 lg:mx-96 mx-10 justify-center mb-20'>Hi, I&#39;m Aga Ariesta 32 yo. When I feel down, mostly it&#39;s because of family, relationship, daily job etc. Sometimes when I scrolling in social media platform, I found some video content about holy quran ayah which is great and suit with my current concerns. It happen just like destiny and honestly it helps me to survive and get my mood back.<br></br><br></br>Unfornately, when I need to see that content again in the future, it&#39;s really difficult to found it again. I&#39;m wasting time to scroll inside favorite menu section. Even I forget where I saved that content whether in Tiktok or IG reels. That&#39;s why I create <b>Jurnalquran</b> that helps me to collect all my favorite holy quran ayah and found it easily when I need to see again. If you feel that difficulties like me, don&#39;t bother to use it too.</p>
+                <p className=' text-justify text-base text-gray-500 items-center mt-10 md:mx-64 lg:mx-96 mx-10 justify-center mb-20'>Hi, I&#39;m Aga Ariesta 32 yo. Most of the time in my video content production hobbies. I need several animation element like value counter animation etc. And because to produce that animation in video editor seems wasting time. I create this website called <b>Videoklik</b> to generate value counter animation element. If you have same difficulties, please don&#39;t hestitate to use this website and give me next ideas about what kind of feature that need to develop in this project.</p>
             )
         }
     }

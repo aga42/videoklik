@@ -6,23 +6,25 @@ import { HeaderProps } from '../types';
 const Header = ({index, actionIndex}: HeaderProps) => {
 
     //Bahasa part
-    const pilihanBahasa = ["Bahasa Indonesia", "English Language"]
-    const [bahasa, setBahasa] = useState(pilihanBahasa[index])
+    // const pilihanBahasa = ["Bahasa Indonesia", "English Language"]
+    // const [bahasa, setBahasa] = useState(pilihanBahasa[index])
 
     const labelAsset = ["Assets Editing", "Assets Editing"]
     const labelTentang = ["Tentang Pengembang", "About Creator"]
 
     // const labelSegera = ["segera", "soon"]
 
-    const pilihanIndexBahasa = [0, 1]
-    const [indexBahasa, setIndexBahasa] = useState(index)
+    // const pilihanIndexBahasa = [0, 1]
+    // const [indexBahasa, setIndexBahasa] = useState(index)
     //End of Bahasa part
 
     const [state, setState] = useState(false)
 
     const navigation = [
-        { title: labelAsset[indexBahasa], path: "https://bit.ly/asset-video-aga" },
-        { title: labelTentang[indexBahasa], path: "/creator?index="+indexBahasa }
+        // { title: labelAsset[indexBahasa], path: "https://bit.ly/asset-video-aga" },
+        // { title: labelTentang[indexBahasa], path: "/creator?index="+indexBahasa }
+        { title: labelAsset[index], path: "https://bit.ly/asset-video-aga" },
+        { title: labelTentang[index], path: "/creator?index="+index }
     ]
 
     const checkSoon = (title: String) => {
@@ -64,10 +66,7 @@ const Header = ({index, actionIndex}: HeaderProps) => {
                         </button>
                     </div>
                     <ul className={`flex-1 justify-between mt-12 md:flex md:mt-0 ${state ? '' : 'hidden'}`}>
-                        <li className="order-2 pb-5 md:pb-0">
-                            {/* <a href="javascript:void(0)" className="py-3 px-6 rounded-md shadow-md text-white text-center bg-indigo-500 focus:shadow-none block md:inline">
-                                Ganti bahasa
-                            </a> */}
+                        {/* <li className="order-2 pb-5 md:pb-0">
                             <div className="flex items-center justify-center mt-6" data-twe-dropdown-ref>
                                 <button
                                     className="flex items-center whitespace-nowrap rounded bg-fuchsia-600 px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-fuchsia-700 hover:shadow-primary-2 focus:bg-fuchsia-700 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-fuchsia-700 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
@@ -116,7 +115,7 @@ const Header = ({index, actionIndex}: HeaderProps) => {
                                         )}
                                 </ul>
                             </div>
-                        </li>
+                        </li> */}
                         <div className="order-1 flex-1 justify-center items-center space-y-5 md:flex md:space-x-6 md:space-y-0">
                             {
                                 navigation.map((item, idx) => (
