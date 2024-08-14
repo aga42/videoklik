@@ -16,6 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="shortcut icon" href="favicon.ico" />
+        <meta name="monetag" content="d5d404b079fc8fae3c2c58a8ba005ae6"></meta>
       </head>
       <body>
       <Suspense fallback={<div>Loading...</div>}>
