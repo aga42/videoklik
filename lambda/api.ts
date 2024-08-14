@@ -63,7 +63,7 @@ export const renderVideo = async ({
   };
 
   // return makeRequest<RenderMediaOnLambdaOutput>("/api/lambda/render", body);
-  return makeRequest<RenderMediaOnLambdaOutput>("https://ulmmtt5bustyydwjumrpd34w7a0ndtnb.lambda-url.us-east-1.on.aws/.", body);
+  return makeRequest<RenderMediaOnLambdaOutput>("https://5mt6sywv5a.execute-api.us-east-1.amazonaws.com/FirstDeploy", body);
 };
 
 export const getProgress = async ({
@@ -79,5 +79,5 @@ export const getProgress = async ({
   };
 
   // return makeRequest<ProgressResponse>("/api/lambda/progress", body);
-  return makeRequest<ProgressResponse>("https://ulmmtt5bustyydwjumrpd34w7a0ndtnb.lambda-url.us-east-1.on.aws/.", body);
+  return makeRequest<ProgressResponse>("https://5mt6sywv5a.execute-api.us-east-1.amazonaws.com/FirstDeploy", body);
 };
