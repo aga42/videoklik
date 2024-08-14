@@ -8,6 +8,7 @@
     "url": "https://mohitya.dev"
   },
   "dependencies": {
+    "@aws-amplify/adapter-nextjs": "^1.2.12",
     "@remotion/bundler": "4.0.192",
     "@remotion/cli": "4.0.192",
     "@remotion/google-fonts": "4.0.192",
@@ -16,6 +17,7 @@
     "@remotion/player": "4.0.192",
     "@remotion/shapes": "4.0.192",
     "@remotion/tailwind": "4.0.192",
+    "aws-amplify": "^6.5.0",
     "clsx": "^2.1.0",
     "next": "^13.4.13",
     "react": "^18.2.0",
