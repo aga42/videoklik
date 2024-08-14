@@ -61,7 +61,7 @@
 
 "use client";
 
-import { AbsoluteFill, useCurrentFrame, useVideoConfig, Audio, staticFile } from "remotion";
+import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
 import { CompositionProps } from "../../types/constants";
 import { z } from "zod";
  
@@ -82,7 +82,7 @@ export const Main = ({ title, prefix, suffix }: z.infer<typeof CompositionProps>
         backgroundColor: "#22c943",
       }}
     >
-    <Audio src={staticFile("moneyrise.mp3")} />
+    {/* <Audio src={staticFile("moneyrise.mp3")} /> */}
       <p className=" text-white"><b>{prefix} { frame >= (durationInFrames-31) ? destinateValue.toLocaleString('id-ID') : result.toLocaleString('id-ID')} {suffix}</b></p> 
     </AbsoluteFill>
     </div>
