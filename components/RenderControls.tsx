@@ -9,6 +9,7 @@ import { ErrorComp } from "./Error";
 import { Input } from "./Input";
 import { ProgressBar } from "./ProgressBar";
 import { Spacing } from "./Spacing";
+import Link from "next/link";
 
 export const RenderControls: React.FC<{
   text: string;
@@ -68,7 +69,8 @@ export const RenderControls: React.FC<{
           
           <Spacing></Spacing>
           <div className=" mt-8 mx-auto">
-              <Button
+          <Link href="https://toathoule.com/4/7892388" target="blank">
+          <Button
                 disabled={state.status === "invoking"}
                 // disabled={true}
                 loading={state.status === "invoking"}
@@ -76,6 +78,7 @@ export const RenderControls: React.FC<{
               >
                 Render video
               </Button>
+          </Link> 
             </div>
           {state.status === "error" ? (
             <ErrorComp message={state.error.message}></ErrorComp>
@@ -89,7 +92,7 @@ export const RenderControls: React.FC<{
           />
           <Spacing></Spacing>
           <AlignEnd>
-            <DownloadButton undo={undo} state={state}></DownloadButton>
+          <DownloadButton undo={undo} state={state}></DownloadButton>
           </AlignEnd>
         </>
       ) : null}
