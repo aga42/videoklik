@@ -55,7 +55,7 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
       <Composition
-        id="Searchbars"
+        id="Searchbar"
         component={Searchbar}
         durationInFrames={120}
         fps={30}

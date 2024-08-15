@@ -1,14 +1,14 @@
 import { z } from "zod";
-import { useRendering } from "../helpers/use-rendering";
-import { CompositionProps, COMP_NAME } from "../types/constants";
-import { AlignEnd } from "./AlignEnd";
-import { Button } from "./Button";
-import { InputContainer } from "./Container";
-import { DownloadButton } from "./DownloadButton";
-import { ErrorComp } from "./Error";
-import { Input } from "./Input";
-import { ProgressBar } from "./ProgressBar";
-import { Spacing } from "./Spacing";
+import { useRendering } from "../../helpers/use-rendering";
+import { CompositionProps } from "../../types/constants";
+import { AlignEnd } from "../AlignEnd";
+import { Button } from "../Button";
+import { InputContainer } from "../Container";
+import { DownloadButton } from "../DownloadButton";
+import { ErrorComp } from "../Error";
+import { Input } from "../Input";
+import { ProgressBar } from "../ProgressBar";
+import { Spacing } from "../Spacing";
 import Link from "next/link";
 
 export const RenderControls: React.FC<{
@@ -21,8 +21,9 @@ export const RenderControls: React.FC<{
   duration: string;
   setDuration: React.Dispatch<React.SetStateAction<string>>;
   inputProps: z.infer<typeof CompositionProps>;
-}> = ({ text, setText, prefix, setPrefix, suffix, setSuffix, duration, setDuration, inputProps }) => {
-  const { renderMedia, state, undo } = useRendering(COMP_NAME, inputProps);
+  compositionName: string;
+}> = ({ text, setText, prefix, setPrefix, suffix, setSuffix, duration, setDuration, inputProps, compositionName }) => {
+  const { renderMedia, state, undo } = useRendering(compositionName, inputProps);
 
   return (
     <InputContainer>

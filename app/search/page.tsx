@@ -9,8 +9,8 @@ import {
 } from "../../types/constants";
 import { z } from "zod";
 import Header from "../../components/Header";
-import { RenderControlsSearchbar } from "../../components/RenderControlsSearchbar";
 import Searchbar from "../../remotion/MyComp/Searchbar";
+import { RenderControlsSearchbar } from "../../components/rendercontrols/RenderControlsSearchbar";
 
 const Searchbarpage: NextPage = () => {
   
@@ -58,6 +58,7 @@ const Searchbarpage: NextPage = () => {
                 text={text}
                 setText={setText}
                 inputProps={inputProps}
+                compositionName="Searchbar"
               ></RenderControlsSearchbar>
             </div>
             

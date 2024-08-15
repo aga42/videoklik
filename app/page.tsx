@@ -8,7 +8,7 @@ import {
   defaultMyCompProps
 } from "../types/constants";
 import { z } from "zod";
-import { RenderControls } from "../components/RenderControls";
+import { RenderControls } from "../components/rendercontrols/RenderControls";
 // import SampleComponent from "../remotion/OtherComp/SampleComponent";
 import Header from "../components/Header";
 import Main from "../remotion/MyComp/Main";
@@ -79,6 +79,7 @@ const Home: NextPage = () => {
                 duration={duration}
                 setDuration={setDuration}
                 inputProps={inputProps}
+                compositionName="MyComp"
               ></RenderControls>
             </div>
             
