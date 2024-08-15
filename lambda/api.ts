@@ -5,7 +5,7 @@ import {
   ProgressResponse,
   RenderRequest,
 } from "../types/schema";
-import { CompositionProps } from "../types/constants";
+import { CompositionProps, nProps } from "../types/constants";
 import { ApiResponse } from "../helpers/api-response";
 // import {Res} from "remotion";
 
@@ -55,7 +55,7 @@ export const renderVideo = async ({
   inputProps,
 }: {
   id: string;
-  inputProps: z.infer<typeof CompositionProps>;
+  inputProps: z.infer<typeof nProps>;
 }) => {
   const body: z.infer<typeof RenderRequest> = {
     id,

@@ -38,7 +38,7 @@ const Header = ({index, actionIndex}: HeaderProps) => {
 
     return (
         <header>
-                <nav className="items-center pt-5 px-4 mx-auto max-w-screen-xl sm:px-8 md:flex md:space-x-6">
+                <nav className="items-center pt-5 px-4 mx-auto max-w-screen-xl sm:px-8 md:flex md:space-x-6 bg-white pb-5">
                     <div className="flex justify-between">
                         <a href="/">
                             <img
@@ -119,7 +119,7 @@ const Header = ({index, actionIndex}: HeaderProps) => {
                         <div className="order-1 flex-1 justify-center items-center space-y-5 md:flex md:space-x-6 md:space-y-0">
                             {
                                 navigation.map((item, idx) => (
-                                    <li className="text-gray-500 hover:text-indigo-600 flex" key={idx}>
+                                    <li className="text-gray-500 hover:text-fuchsia-600 flex" key={idx}>
                                         <a href={item.path} target="_blank">{item.title}</a>
                                         {checkSoon(item.title)}
                                     </li>

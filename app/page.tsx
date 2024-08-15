@@ -42,14 +42,14 @@ const Home: NextPage = () => {
 
   return (
     <main className="flex min-h-screen flex-col bg-white">
-      <Header index={indexBahasa} actionIndex={(index: number)=>{
-        setIndexBahasa(index)
-        // setFirstLoad(true)
-      }}/>
-        <div className="sm:grid sm:grid-cols-2 mt-16 sm:mx-44 sm:mb-16">
-          <div>
+        <Header index={indexBahasa} actionIndex={(index: number)=>{
+          setIndexBahasa(index)
+          // setFirstLoad(true)
+        }}/>
+        <div className="sm:grid sm:grid-cols-2 bg-gray-50 sm:h-screen">
+          <div className="sm:mx-44 sm:mb-16 pt-8 sm:pt-16">
             <Player
-                  className=" mx-auto"
+                  className=" mx-auto sm:mx-0 sm:left-1/2"
                   component={Main}
                   inputProps={inputProps}
                   durationInFrames={ duration == "" || duration == "0" ? 30 : Number(duration)*30}
@@ -67,18 +67,21 @@ const Home: NextPage = () => {
                 />
           </div>
           
-          <div className=" w-fit sm:w-1/2 max-w-max mx-auto sm:mt-0 mt-8 sm:mb-0 mb-8">
-            <RenderControls
-              text={text}
-              setText={setText}
-              prefix={prefix}
-              setPrefix={setPrefix}
-              suffix={suffix}
-              setSuffix={setSuffix}
-              duration={duration}
-              setDuration={setDuration}
-              inputProps={inputProps}
-            ></RenderControls>
+          <div className="mt-8 sm:mt-16 sm:mb-0 mb-8">
+            <div className="sm:w-1/3 max-w-max sm:max-w-full mx-auto sm:mx-0 sm:left-1/2 sm:ml-44">
+              <RenderControls
+                text={text}
+                setText={setText}
+                prefix={prefix}
+                setPrefix={setPrefix}
+                suffix={suffix}
+                setSuffix={setSuffix}
+                duration={duration}
+                setDuration={setDuration}
+                inputProps={inputProps}
+              ></RenderControls>
+            </div>
+            
           </div>
         </div>
     </main>

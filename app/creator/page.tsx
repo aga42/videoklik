@@ -20,7 +20,7 @@ const Creator = () => {
     const showDesc = () => {
         if(indexBahasa == 0){
             return (
-                <p className=' text-justify text-base text-gray-500 items-center mt-10 md:mx-64 lg:mx-96 mx-10 justify-center mb-20'>Hi, gw Aga Ariesta (32 tahun). Di beberapa konten video gw yang membahas finansial, sering banget membutuhkan elemen animasi uang dengan range tertentu. Nah karena sudah berulang kali membutuhkan elemen tersebut dan pembuatannya di aplikasi video editing memakan waktu. Akhirnya gw memutuskan untuk membuat video generator animasi tersebut seperti yang ada di dalam website <b>Videoklik</b> ini. Dan jika kedepannya gw mengalami kesulitan-kesulitan lainnya atau bahkan jika kamu punya kesulitan atau kebutuhan supaya proses pembuatan konten video jadi lebih mudah. Bisa banget untuk memberikan gw saran dan masukan untuk dijadikan fitur <b>Videoklik</b> berikutnya</p>
+                <p className=' text-justify text-base text-gray-500 items-center mt-10 md:mx-64 lg:mx-96 mx-10 justify-center mb-20'>Hi, gw Aga Ariesta (32 tahun). Di beberapa konten video gw yang membahas finansial, sering banget membutuhkan elemen animasi uang dengan range tertentu. Nah karena sudah berulang kali membutuhkan elemen tersebut dan pembuatannya di aplikasi video editing memakan waktu. Akhirnya gw memutuskan untuk membuat website <b>Videoklik</b> sebagai online tools generator video animasi tersebut. Dan jika kedepannya gw mengalami kesulitan-kesulitan lainnya atau bahkan jika kamu punya kesulitan atau kebutuhan supaya proses pembuatan konten video jadi lebih mudah. Bisa banget untuk memberikan gw saran dan masukan untuk dijadikan fitur <b>Videoklik</b> berikutnya</p>
             )
         }else {
             return (

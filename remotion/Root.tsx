@@ -8,10 +8,12 @@ import {
   // VIDEO_HEIGHT,
   // VIDEO_WIDTH,
   CompositionProps,
-  COMP_NAME
+  COMP_NAME,
+  defaultSearchbarProps
 } from "../types/constants";
 import { NextLogo } from "./MyComp/NextLogo";
 import Main from "./MyComp/Main";
+import Searchbar from "./MyComp/Searchbar";
 
 export const RemotionRoot: React.FC = () => {
 
@@ -50,6 +52,17 @@ export const RemotionRoot: React.FC = () => {
           suffix: defaultMyCompProps.suffix,
           prefix: defaultMyCompProps.prefix,
           duration: defaultMyCompProps.duration
+        }}
+      />
+      <Composition
+        id="Searchbars"
+        component={Searchbar}
+        durationInFrames={120}
+        fps={30}
+        width={1280}
+        height={720}
+        defaultProps={{
+          title: defaultSearchbarProps.title,
         }}
       />
     </>
