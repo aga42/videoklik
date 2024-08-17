@@ -1,30 +1,17 @@
 "use client";
 
 import { useState } from 'react'
-import { HeaderProps } from '../types';
 
-const Header = ({index, actionIndex}: HeaderProps) => {
+const Header = () => {
 
-    //Bahasa part
-    // const pilihanBahasa = ["Bahasa Indonesia", "English Language"]
-    // const [bahasa, setBahasa] = useState(pilihanBahasa[index])
-
-    const labelAsset = ["Assets Editing", "Assets Editing"]
-    const labelTentang = ["Tentang Pengembang", "About Creator"]
-
-    // const labelSegera = ["segera", "soon"]
-
-    // const pilihanIndexBahasa = [0, 1]
-    // const [indexBahasa, setIndexBahasa] = useState(index)
-    //End of Bahasa part
+    const labelAsset = "Assets Editing"
+    const labelTentang = "About Creator"
 
     const [state, setState] = useState(false)
 
     const navigation = [
-        // { title: labelAsset[indexBahasa], path: "https://bit.ly/asset-video-aga" },
-        // { title: labelTentang[indexBahasa], path: "/creator?index="+indexBahasa }
-        { title: labelAsset[index], path: "https://bit.ly/asset-video-aga" },
-        { title: labelTentang[index], path: "/creator?index="+index }
+        { title: labelAsset, path: "https://bit.ly/asset-video-aga" },
+        { title: labelTentang, path: "/creator?index=1" }
     ]
 
     const checkSoon = (title: String) => {
@@ -119,7 +106,7 @@ const Header = ({index, actionIndex}: HeaderProps) => {
                         <div className="order-1 flex-1 justify-center items-center space-y-5 md:flex md:space-x-6 md:space-y-0">
                             {
                                 navigation.map((item, idx) => (
-                                    <li className="text-gray-500 hover:text-fuchsia-600 flex" key={idx}>
+                                    <li className="text-gray-500 hover:text-fuchsia-600 flex text-base sm:text-2xl" key={idx}>
                                         <a href={item.path} target="_blank">{item.title}</a>
                                         {checkSoon(item.title)}
                                     </li>

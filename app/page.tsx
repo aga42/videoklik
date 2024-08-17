@@ -9,17 +9,11 @@ import {
 } from "../types/constants";
 import { z } from "zod";
 import { RenderControls } from "../components/rendercontrols/RenderControls";
-// import SampleComponent from "../remotion/OtherComp/SampleComponent";
 import Header from "../components/Header";
 import Main from "../remotion/MyComp/Main";
-// import { SampleComposition } from "../components/SampleComposition";
+import Footer from "../components/Footer";
 
 const Home: NextPage = () => {
-  // const [text, setText] = useState<string>(defaultMyCompProps.title);
-
-  // const [prefix, setPrefix] = useState<string>(defaultMyCompProps.prefix);
-  // const [suffix, setSuffix] = useState<string>(defaultMyCompProps.suffix);
-  // const [duration, setDuration] = useState<string>(defaultMyCompProps.duration);
   
   const [text, setText] = useState<string>(defaultMyCompProps.title);
 
@@ -36,16 +30,9 @@ const Home: NextPage = () => {
     };
   }, [text, prefix, suffix, duration]);
 
-  const pilihanIndexBahasa = [0, 1]
-  const [indexBahasa, setIndexBahasa] = useState(pilihanIndexBahasa[0])
-  // const [firstLoad, setFirstLoad] = useState(true)
-
   return (
     <main className="flex min-h-screen flex-col bg-white">
-        <Header index={indexBahasa} actionIndex={(index: number)=>{
-          setIndexBahasa(index)
-          // setFirstLoad(true)
-        }}/>
+        <Header></Header>
         <div className="sm:grid sm:grid-cols-2 bg-gray-50 sm:h-screen">
           <div className="sm:mx-44 sm:mb-16 pt-8 sm:pt-16">
             <Player
@@ -85,6 +72,7 @@ const Home: NextPage = () => {
             
           </div>
         </div>
+        <Footer></Footer>
     </main>
   );
 };

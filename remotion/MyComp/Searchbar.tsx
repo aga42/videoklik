@@ -23,7 +23,7 @@ export const Searchbar = ({ title }: z.infer<typeof CompositionSearchbarProps>) 
         <RoundedBox></RoundedBox>
       </Sequence>
       <Sequence from={15} className="mt-80 ml-16">
-        <TypingText title="Celana jeans hitam murah"></TypingText>
+        <TypingText title="Videoklik.com"></TypingText>
       </Sequence>
       
     </AbsoluteFill>

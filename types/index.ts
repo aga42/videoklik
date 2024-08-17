@@ -6,13 +6,12 @@ export interface QuranListProps{
     indexBahasa: number
 }
 
-export interface QuranItemListProps{
-    data: any
+export interface ItemTemplateProps{
     key: any
-    arabic: string
-    arti: string
-    surat: string
-    kategori: string
+    title: string
+    component: any
+    inputProps: any
+    link: string
 }
 
 export interface ChooseAnswerProps{
