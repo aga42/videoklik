@@ -32,7 +32,7 @@ const ItemTemplate = ({ key, title, component, inputProps, link }: ItemTemplateP
                   // loop
                 />
         </div>
-        <div className=" shadow-md border border-gray-100 bg-gray-100 rounded-b-xl text-gray-500 sm:text-xl text-base py-4 pl-4 mb-8" onClick={()=>{router.push(link)}}>{title}</div>
+        <div className=" shadow-md border border-gray-100 bg-gray-100 rounded-b-xl text-gray-600 sm:text-xl text-base py-4 pl-4 mb-8" onClick={()=>{router.push(link)}}>{title}</div>
         </li>
     )
 

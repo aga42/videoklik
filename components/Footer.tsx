@@ -5,7 +5,7 @@ const Footer = () => {
     var phoneWa = 'https://wa.me/+6281218824244/?text=Halo,%20admin%20OVideoklik.%20Mau%20bertanya..';
 
     return (
-        <footer className='grid grid-cols-5 w-full'>
+        <footer className='grid grid-cols-5 w-full '>
             <div></div>
             <div className=" py-10 items-center justify-between sm:flex col-span-3">
                 <p className="text-gray-600 text-sm">© 2024 Videoklik All rights reserved.</p>

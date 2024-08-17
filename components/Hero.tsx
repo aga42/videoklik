@@ -5,14 +5,14 @@ const Hero = () => {
     //Bahasa part
     const labelQuestion = "Video element generator "
     const labelQuestion2 = " at your klik"
-    const labelVideoklik = " will help you to dodge built any video element from scratch and wasting time"
+    const labelVideoklik = " will help you to dodge create any video element from scratch and save your time"
     const labelJawaban = "Try for FREE"
     //End of Bahasa part
 
     return (
         
         <>
-            <section className="mt-32 md:mt-64 lg:mt-64 mx-auto max-w-screen-xl pb-4 px-4 sm:px-8">
+            <section className="mt-32 md:mt-48 lg:mt-48 mx-auto max-w-screen-xl pb-4 px-4 sm:px-8">
                 <div className="text-center space-y-4">
                     <h1 className="text-gray-800 font-bold text-4xl md:text-5xl">
                         {labelQuestion}

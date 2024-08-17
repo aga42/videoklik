@@ -4,13 +4,15 @@ import { useState } from 'react'
 
 const Header = () => {
 
-    const labelAsset = "Assets Editing"
+    const labelAsset = "FREE Assets"
+    const labelPricelist = "Pricing"
     const labelTentang = "About Creator"
 
     const [state, setState] = useState(false)
 
     const navigation = [
         { title: labelAsset, path: "https://bit.ly/asset-video-aga" },
+        { title: labelPricelist, path: "/pricing" },
         { title: labelTentang, path: "/creator?index=1" }
     ]
 
