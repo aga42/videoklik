@@ -2,167 +2,170 @@
 
 import { motion } from "framer-motion"
 import { fadeIn, staggerContainer } from '../utils/motion';
-// import Cookies from 'js-cookie'
-// import { useEffect, useState } from "react";
+import Cookies from 'js-cookie'
+import { useEffect, useState } from "react";
 
 const Plan = () => {
 
-  // const cookiesUserId = Cookies.get('user_id');
-  // const cookiesName = Cookies.get('name');
-  // const firstLastName = cookiesName?.split(' ');
-  // const cookiesEmail = Cookies.get('email');
+  const cookiesUserId = Cookies.get('user_id');
+  const cookiesName = Cookies.get('name');
+  const firstLastName = cookiesName?.split(' ');
+  const cookiesEmail = Cookies.get('email');
 
-  const plans = [
-      {
-          name: "Free",
-          desc: "Package plan to start using videoklik and get used to",
-          price: 0,
-          amount: 0,
-          isMostPop: false,
-          features: [
-              "2 credits",
-              "Ads",
-              "720p"
-          ],
-      },
-      {
-          name: "Pro",
-          desc: "Pro package that offer productivity and better result",
-          price: 17,
-          amount: 17000,
-          isMostPop: false,
-          features: [
-              "10 credits",
-              "No Ads",
-              "1080p, 4K"
-          ],
-      },
-      {
-          name: "Pro (58% OFF)",
-          desc: "Pro package at a discount and maximum render time",
-          price: 99,
-          amount: 99000,
-          isMostPop: true,
-          features: [
-              "100 credits",
-              "No Ads",
-              "1080p, 4K"
-          ],
-      },
-  ]
-
-  // var body: any = {}
-
-  // const generateOrderId = async (e: any, amount: number, packageName: string) => {
-
-  //   try {
-
-  //     const response = await fetch(`/api/transaction/orderid/${packageName}`)
-  //     const data = await response.json()
-
-  //     body = {
-  //       "transaction_details": {
-  //         "order_id": data,
-  //         "gross_amount": amount
-  //       },
-  //       "credit_card": {
-  //         "secure": true
-  //       },
-  //       "customer_details": {
-  //         "first_name": firstLastName?.[0],
-  //         "last_name": firstLastName?.[1],
-  //         "email": cookiesEmail,
-  //         "phone": ""
-  //       }
-  //     }
-
-  //     createTransaction(e, packageName)
-
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-
-  // }
-
-  // const createTransaction = async (e: any, packageName: string) => {
-  //   e.preventDefault();
-
-  //   const transactionTime = new Date()
-
-  //   try {
-  //     const response = await fetch("/api/transaction", {
-  //       method: "POST",
-  //       body: JSON.stringify({
-  //         order_id: body.transaction_details.order_id,
-  //         user_id: cookiesUserId,
-  //         email: cookiesEmail,
-  //         name: cookiesName,
-  //         transaction_status: 'pending',
-  //         fraud_status: 'accept',
-  //         transaction_time: transactionTime.toISOString(),
-  //         payment_type: 'undefined',
-  //         gross_amount: body.transaction_details.gross_amount,
-  //         currency: 'IDR',
-  //         package_name: packageName
-  //       })
-
-  //     })
-
-  //     if (response.ok) {
-  //       //open new tab
-  //       fetchPayment()
-  //     }
-
-  //   } catch (error) {
-  //     console.log('error gaes')
-  //   } finally {
-  //     //   setSubmitting(false)
-  //   }
-  // }
-
-  // const fetchPayment = async () => {
-  //   //setIsloading(true)
-  //   await fetch("/api/payment", {
-  //     method: "POST",
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       'Accept': 'application/json',
-  //       'Authorization': `Basic U0ItTWlkLXNlcnZlci1SbS1XVnFMOUFmbjJVckxxYU9rQ0FyRFU6`
+  // const plans = [
+  //     {
+  //         name: "Free",
+  //         desc: "Package plan to start using videoklik and get used to",
+  //         price: 0,
+  //         amount: 0,
+  //         isMostPop: false,
+  //         features: [
+  //             "2 credits",
+  //             "Ads",
+  //             "720p"
+  //         ],
   //     },
-  //     body: JSON.stringify(body)
-  //   }).then(res => res.json()).then(res => {
-  //     if (res.redirect_url) {
+  //     {
+  //         name: "Pro",
+  //         desc: "Pro package that offer productivity and better result",
+  //         price: 17,
+  //         amount: 17000,
+  //         isMostPop: false,
+  //         features: [
+  //             "10 credits",
+  //             "No Ads",
+  //             "1080p, 4K"
+  //         ],
+  //     },
+  //     {
+  //         name: "Pro (58% OFF)",
+  //         desc: "Pro package at a discount and maximum render time",
+  //         price: 99,
+  //         amount: 99000,
+  //         isMostPop: true,
+  //         features: [
+  //             "100 credits",
+  //             "No Ads",
+  //             "1080p, 4K"
+  //         ],
+  //     },
+  // ]
 
-  //       window.open(res.redirect_url, '_blank')
+  var body: any = {}
 
-  //     } else {
-  //       alert(`Error ${res.error}`);
-  //     }
-  //   }).catch((e) => {
-  //     alert(e);
-  //   }).finally(() => {
-  //     //setIsloading(false)
-  //   })
-  // }
+  const generateOrderId = async (e: any, amount: number, packageName: string) => {
 
-  // const [plans, setplans] = useState([])
+    try {
 
-  // useEffect(() => {
-  //   const fetchPlans = async () => {
+      const response = await fetch(`/api/transaction/orderid/${packageName}`)
+      const data = await response.json()
 
-  //     try {
-  //       const response = await fetch('/api/package')
-  //       const data = await response.json()
+      body = {
+        "transaction_details": {
+          "order_id": data,
+          "gross_amount": amount
+        },
+        "credit_card": {
+          "secure": true
+        },
+        "customer_details": {
+          "first_name": firstLastName?.[0],
+          "last_name": firstLastName?.[1],
+          "email": cookiesEmail,
+          "phone": ""
+        }
+      }
 
-  //       setplans(data)
-  //     } catch (error) {
-  //       console.log(error)
-  //     }
+      console.log(data)
+      createTransaction(e, packageName)
 
-  //   }
+    } catch (error) {
+      console.log(error)
+    }
 
-  //   fetchPlans()
-  // }, [])
+  }
+
+  const createTransaction = async (e: any, packageName: string) => {
+    e.preventDefault();
+
+    const transactionTime = new Date()
+
+    try {
+      const response = await fetch("/api/transaction", {
+        method: "POST",
+        body: JSON.stringify({
+          order_id: body.transaction_details.order_id,
+          user_id: cookiesUserId,
+          email: cookiesEmail,
+          name: cookiesName,
+          transaction_status: 'pending',
+          fraud_status: 'accept',
+          transaction_time: transactionTime.toISOString(),
+          payment_type: 'undefined',
+          gross_amount: body.transaction_details.gross_amount,
+          currency: 'IDR',
+          package_name: packageName
+        })
+
+      })
+
+      // console.log(response)
+
+      if (response.ok) {
+        //open new tab
+        fetchPayment()
+      }
+
+    } catch (error) {
+      console.log('error gaes')
+    } finally {
+      //   setSubmitting(false)
+    }
+  }
+
+  const fetchPayment = async () => {
+    //setIsloading(true)
+    await fetch("/api/payment", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `Basic U0ItTWlkLXNlcnZlci1SbS1XVnFMOUFmbjJVckxxYU9rQ0FyRFU6`
+      },
+      body: JSON.stringify(body)
+    }).then(res => res.json()).then(res => {
+      if (res.redirect_url) {
+
+        window.open(res.redirect_url, '_blank')
+
+      } else {
+        alert(`Error ${res.error}`);
+      }
+    }).catch((e) => {
+      alert(e);
+    }).finally(() => {
+      //setIsloading(false)
+    })
+  }
+
+  const [plans, setplans] = useState([])
+
+  useEffect(() => {
+    const fetchPlans = async () => {
+
+      try {
+        const response = await fetch('/api/package')
+        const data = await response.json()
+
+        setplans(data)
+      } catch (error) {
+        console.log(error)
+      }
+
+    }
+
+    fetchPlans()
+  }, [])
 
   return (
     <section className='py-14' id="harga">
@@ -188,6 +191,11 @@ const Plan = () => {
           variants={fadeIn('up', 'tween', 0.2, 1.5)}
         >
           {
+            plans.length === 0 ?
+            <div className="text-gray-500 text-base text-center">
+              Please wait
+            </div>
+            :
             plans.map((item: any, idx) => (
               <div key={idx} className={`relative flex-1 flex items-stretch flex-col ${idx === 2 ? 'bg-fuchsia-100' : 'bg-gray-50'} rounded-xl border-2 mt-6 sm:mt-0 ${item.isMostPop ? "mt-10" : ""}`}>
                 {
@@ -197,7 +205,7 @@ const Plan = () => {
                                 }
                 <div className="p-8 space-y-4 border-b">
                   <span className={idx === 2 ? 'text-fuchsia-600 font-medium' : 'text-gray-500 font-medium'}>
-                    {item.name}
+                    {idx === 2 ? `${item.name} (58% OFF)` : item.name}
                   </span>
                   <div className='text-gray-800 text-3xl font-semibold'>
                     {idx === 0 ? "FREE" : `Rp. ${item.price}.000`}
@@ -231,7 +239,8 @@ const Plan = () => {
                     }}
                     whileTap={{ scale: 0.9 }}
                     onClick={(e) => {
-                      // idx === 0 && generateOrderId(e, item.amount, item.name)
+                      // idx === 2 ? generateOrderId(e, item.amount, item.name) : {}
+                      generateOrderId(e, item.amount, item.name)
                     }}
                   >
                     {/* COBA SEKARANG<sup className=" text-green-400">*Gratis 7 hari</sup> */}
