@@ -33,7 +33,7 @@ const Creator = () => {
         <div>
                 <div className="flex min-h-screen flex-col bg-white">
                     {/* <Suspense fallback={<div>Loading...</div>}> */}
-                        <Header></Header>
+                        <Header actionLabel='TRY FOR FREE'></Header>
                     {/* </Suspense> */}
                     <div className=' content-center justify-center self-center mt-28 '>
                         <Image src="/images/img_aga.png" width={200} height={200} alt="Picture of creator" className='rounded-full'/>

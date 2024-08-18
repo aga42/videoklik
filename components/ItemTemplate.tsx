@@ -32,7 +32,9 @@ const ItemTemplate = ({ key, title, component, inputProps, link }: ItemTemplateP
                   // loop
                 />
         </div>
-        <div className=" shadow-md border border-gray-100 bg-gray-100 rounded-b-xl text-gray-600 sm:text-xl text-base py-4 pl-4 mb-8" onClick={()=>{router.push(link)}}>{title}</div>
+        <div className=" shadow-md border border-gray-100 hover:border-fuchsia-200 bg-gray-100 hover:bg-fuchsia-200 rounded-b-xl text-gray-600 sm:text-xl text-base py-4 pl-4 mb-8">
+          <a href={link} className="flex w-full">{title}</a>
+        </div>
         </li>
     )
 

@@ -24,7 +24,7 @@ const Searchbarpage: NextPage = () => {
 
   return (
     <main className="flex min-h-screen flex-col bg-white">
-        <Header></Header>
+        <Header actionLabel="GET DEALS NOW"></Header>
         <div className="sm:grid sm:grid-cols-2 bg-gray-50 sm:h-screen">
           <div className="sm:mx-44 sm:mb-16 pt-8 sm:pt-16">
             <Player

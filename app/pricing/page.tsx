@@ -9,7 +9,7 @@ const Pricing: NextPage = () => {
 
   return (
     <main className="flex min-h-screen flex-col bg-white">
-        <Header></Header>
+        <Header actionLabel="GET DEALS NOW"></Header>
         <div className="bg-gray-50 ">
         <Plan></Plan>
         </div>

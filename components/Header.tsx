@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from 'react'
+import { HeaderProps } from '../types';
 
-const Header = () => {
+const Header = ({ actionLabel }: HeaderProps) => {
 
-    const labelAsset = "FREE Assets"
+    const labelAsset = "Assets"
     const labelPricelist = "Pricing"
     const labelTentang = "About Creator"
 
@@ -17,11 +18,11 @@ const Header = () => {
     ]
 
     const checkSoon = (title: String) => {
-        // if(title == labelAsset[indexBahasa] || title == "Hadist"){
-        //     return <p className=' text-indigo-600 text-xs ml-1'>{labelSegera[indexBahasa]}</p>
-        // }else{
-        //     return <></>
-        // }
+        if(title == "Assets"){
+            return <p className=' text-fuchsia-500 text-xs ml-1'>Free</p>
+        }else{
+            return <></>
+        }
         return <></>
     }
 
@@ -55,30 +56,14 @@ const Header = () => {
                         </button>
                     </div>
                     <ul className={`flex-1 justify-between mt-12 md:flex md:mt-0 ${state ? '' : 'hidden'}`}>
-                        {/* <li className="order-2 pb-5 md:pb-0">
+                        <li className="order-2 pb-5 md:pb-0">
                             <div className="flex items-center justify-center mt-6" data-twe-dropdown-ref>
                                 <button
                                     className="flex items-center whitespace-nowrap rounded bg-fuchsia-600 px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-fuchsia-700 hover:shadow-primary-2 focus:bg-fuchsia-700 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-fuchsia-700 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
-                                    type="button"
-                                    id="dropdownMenuLargeButton"
-                                    data-twe-dropdown-toggle-ref
-                                    aria-expanded="false"
-                                    data-twe-ripple-init
-                                    data-twe-ripple-color="light">
-                                    {bahasa}
-                                    <span className="ms-2 w-2 [&>svg]:h-5 [&>svg]:w-5">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 20 20"
-                                        fill="currentColor">
-                                        <path
-                                        fill-rule="evenodd"
-                                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                                        clip-rule="evenodd" />
-                                    </svg>
-                                    </span>
+                                    type="button">
+                                    {actionLabel}
                                 </button>
-                                <ul
+                                {/* <ul
                                     className="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-base shadow-lg data-[twe-dropdown-show]:block dark:bg-surface-dark"
                                     aria-labelledby="dropdownMenuLargeButton"
                                     data-twe-dropdown-menu-ref>
@@ -102,9 +87,9 @@ const Header = () => {
                                             >
                                             </li>
                                         )}
-                                </ul>
+                                </ul> */}
                             </div>
-                        </li> */}
+                        </li>
                         <div className="order-1 flex-1 justify-center items-center space-y-5 md:flex md:space-x-6 md:space-y-0">
                             {
                                 navigation.map((item, idx) => (

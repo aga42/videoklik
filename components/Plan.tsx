@@ -180,23 +180,23 @@ const Plan = () => {
           </h3>
           <div className='mt-3 max-w-xl'>
             <p>
-              Choose plan which suit your needs.
+              Choose plan which suit your needs.<span className=" text-fuchsia-500 text-base font-bold"> Get Deals Now </span>
             </p>
           </div>
         </motion.div>
-        <motion.div className='mt-16 justify-center gap-6 sm:grid sm:grid-cols-2 sm:space-y-0 lg:grid-cols-3'
+        <motion.div className='mt-8 sm:mt-16 justify-center gap-6 flex flex-col-reverse sm:grid sm:grid-cols-2 sm:space-y-0 lg:grid-cols-3'
           variants={fadeIn('up', 'tween', 0.2, 1.5)}
         >
           {
             plans.map((item: any, idx) => (
-              <div key={idx} className={`relative flex-1 flex items-stretch flex-col rounded-xl border-2 mt-6 sm:mt-0 ${item.isMostPop ? "mt-10" : ""}`}>
-                {/* {
+              <div key={idx} className={`relative flex-1 flex items-stretch flex-col ${idx === 2 ? 'bg-fuchsia-100' : 'bg-gray-50'} rounded-xl border-2 mt-6 sm:mt-0 ${item.isMostPop ? "mt-10" : ""}`}>
+                {
                                     item.isMostPop ? (
-                                        <span className="w-32 absolute -top-5 left-0 right-0 mx-auto px-3 py-2 rounded-full border shadow-md bg-white text-center text-gray-700 text-sm font-semibold">Most popular</span>
+                                        <span className="w-32 absolute -top-5 left-0 right-0 mx-auto px-3 py-2 rounded-full border shadow-md bg-white text-center text-fuchsia-600 text-sm font-semibold">Most popular</span>
                                     ) : ""
-                                } */}
+                                }
                 <div className="p-8 space-y-4 border-b">
-                  <span className='text-fuchsia-600 font-medium'>
+                  <span className={idx === 2 ? 'text-fuchsia-600 font-medium' : 'text-gray-500 font-medium'}>
                     {item.name}
                   </span>
                   <div className='text-gray-800 text-3xl font-semibold'>
@@ -207,13 +207,13 @@ const Plan = () => {
                   </p>
                   <ul className='py-2 space-y-3'>
                                     {
-                                        item.features.map((featureItem: any, idx: any) => (
-                                            <li key={idx} className='flex items-center gap-5'>
+                                        item.features.map((featureItem: any, idy: any) => (
+                                            <li key={idy} className='flex items-center gap-5'>
                                                 <svg
                                                     xmlns='http://www.w3.org/2000/svg'
-                                                    className='h-5 w-5 text-fuchsia-600'
+                                                    className={idx === 2 ? 'h-5 w-5 text-fuchsia-600' : 'h-5 w-5 text-gray-500'}
                                                     viewBox='0 0 20 20'
-                                                    fill='currentColor'>
+                                                    fill={idx === 2 ? '#c026d3' : '#6b7280'}>
                                                     <path
                                                         fill-rule='evenodd'
                                                         d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'

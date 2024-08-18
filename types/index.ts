@@ -23,8 +23,7 @@ export interface NavTitleProps{
 }
 
 export interface HeaderProps{
-    index: number
-    actionIndex: Function
+    actionLabel: string
 }
 
 export interface HeroProps{
