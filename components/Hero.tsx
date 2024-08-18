@@ -1,9 +1,27 @@
 "use client";
 
+import { useState, useEffect } from 'react'
+
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "../utils/motion";
+import { signIn, useSession, getProviders } from 'next-auth/react'
+import { useRouter } from 'next/navigation';
+
 
 const Hero = () => {
+
+    const router = useRouter()
+    const { data: session } = useSession();
+    const [providers, setProviders] = useState(null);
+    useEffect(() => {
+        const setUpProviders = async () => {
+          const response: any = await getProviders();
+    
+          setProviders(response);
+        }
+    
+        setUpProviders();
+      }, [])
 
     const labelQuestion = "Video element generator "
     const labelQuestion2 = " at your klik"
@@ -36,9 +54,13 @@ const Hero = () => {
                         aria-expanded="false"
                         data-twe-ripple-init
                         data-twe-ripple-color="light"
-                        onClick={()=> {
-                            
-                        } }>
+                        onClick={()=> 
+                            {
+                                session?.user ? router.push("/counter")
+                                :
+                                providers && Object.values(providers).map((provider: any) => (signIn(provider.id)))}
+                            }
+                        >
                         {labelJawaban}
                     </button>
                 </motion.div>

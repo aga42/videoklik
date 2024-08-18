@@ -3,10 +3,23 @@
 import { Player } from "@remotion/player"
 import { ItemTemplateProps } from "../types"
 import { useRouter } from "next/navigation"
+import { signIn, useSession, getProviders } from 'next-auth/react'
+import { useState, useEffect } from 'react'
 
 const ItemTemplate = ({ key, title, component, inputProps, link }: ItemTemplateProps) => {
 
     const router = useRouter()
+    const { data: session } = useSession();
+    const [providers, setProviders] = useState(null);
+    useEffect(() => {
+        const setUpProviders = async () => {
+          const response: any = await getProviders();
+    
+          setProviders(response);
+        }
+    
+        setUpProviders();
+      }, [])
 
     return(
         <li key={key}>
@@ -33,7 +46,15 @@ const ItemTemplate = ({ key, title, component, inputProps, link }: ItemTemplateP
                 />
         </div>
         <div className=" shadow-md border border-gray-100 hover:border-fuchsia-200 bg-gray-100 hover:bg-fuchsia-200 rounded-b-xl text-gray-600 sm:text-xl text-base py-4 pl-4 mb-8">
-          <a href={link} className="flex w-full">{title}</a>
+          <a className="flex w-full cursor-pointer"
+            onClick={()=> 
+              {
+                  session?.user ? router.push(link)
+                  :
+                  providers && Object.values(providers).map((provider: any) => (signIn(provider.id)))}
+              }
+          >
+          {title}</a>
         </div>
         </li>
     )
