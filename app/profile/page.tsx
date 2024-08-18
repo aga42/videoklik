@@ -125,7 +125,7 @@ const Profile: NextPage = () => {
                 <div>
                     <label className="text-gray-600 dark:text-gray-400">Credits Available</label>
                     <input
-                        className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 bg-gray-50 disabled:bg-gray-100 text-gray-500"
+                        className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 bg-gray-50 disabled:bg-gray-200 text-gray-500"
                         type="number"
                         disabled={true}
                         value={credits}/>
@@ -134,7 +134,7 @@ const Profile: NextPage = () => {
                 <div>
                     <label className="text-gray-600 dark:text-gray-400">Type Member</label>
                     <input
-                        className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 bg-gray-50 disabled:bg-gray-100 text-gray-500"
+                        className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 bg-gray-50 disabled:bg-gray-200 text-gray-500"
                         type="text"
                         disabled={true}
                         value={ isProMember ? "Pro" : "Free" }/>
