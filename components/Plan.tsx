@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { fadeIn, staggerContainer } from '../utils/motion';
 import Cookies from 'js-cookie'
 import { useEffect, useState } from "react";
+import { signIn, useSession, getProviders } from 'next-auth/react'
 
 const Plan = () => {
 
@@ -11,6 +12,8 @@ const Plan = () => {
   const cookiesName = Cookies.get('name');
   const firstLastName = cookiesName?.split(' ');
   const cookiesEmail = Cookies.get('email');
+
+  const [freeDesc, setFreeDesc] = useState(false)
 
   // const plans = [
   //     {
@@ -167,6 +170,18 @@ const Plan = () => {
     fetchPlans()
   }, [])
 
+  const { data: session } = useSession();
+    const [providers, setProviders] = useState(null);
+    useEffect(() => {
+        const setUpProviders = async () => {
+          const response: any = await getProviders();
+    
+          setProviders(response);
+        }
+    
+        setUpProviders();
+      }, [])  
+
   return (
     <section className='py-14' id="harga">
       <motion.div className="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8"
@@ -239,13 +254,24 @@ const Plan = () => {
                     }}
                     whileTap={{ scale: 0.9 }}
                     onClick={(e) => {
-                      // idx === 2 ? generateOrderId(e, item.amount, item.name) : {}
-                      generateOrderId(e, item.amount, item.name)
-                    }}
+                      idx === 0 ? 
+                      
+                        (session?.user ? setFreeDesc(true)
+                        :
+                        providers && Object.values(providers).map((provider: any) => (signIn(provider.id))))  
+                    
+                      : generateOrderId(e, item.amount, item.name)
+                    }
+                    }
                   >
                     {/* COBA SEKARANG<sup className=" text-green-400">*Gratis 7 hari</sup> */}
                     {idx === 2 ? <p>GET DEALS NOW</p> : <p className="text-gray-500">GET STARTED</p>}
                   </motion.button>
+                  {idx === 0 && freeDesc ?
+                    <><p>When you have a videoklik's account. Free package is added to your account automatically.<a href="/profile" className="text-fuchsia-600"> Check My Profile</a></p></>
+                    :
+                    <></>
+                  }
                 </div>
               </div>
             ))

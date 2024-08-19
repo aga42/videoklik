@@ -25,3 +25,8 @@ export interface SubmitButtonProps{
     btnType?: 'button' | 'submit'
     submitting: boolean
 }
+
+export interface FaqCardProps{
+    faqsList: any
+    idx: any
+}

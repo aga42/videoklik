@@ -33,7 +33,7 @@ export const PATCH = async (
 
     } catch (error) {
         console.log(error)
-        return new Response("Failed to update user template", { status: 500 });
+        return new Response("Failed to update user profile", { status: 500 });
     }
 
 }
@@ -53,7 +53,7 @@ export const GET = async (
 
     } catch (error) {
         console.log(error)
-        return new Response("Failed to get berita");
+        return new Response("Failed to get profile");
     }
 
 }
