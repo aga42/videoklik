@@ -10,11 +10,11 @@ export const CompositionProps = z.object({
   title: z.string(),
   prefix: z.string(),
   suffix: z.string(),
-  duration: z.string(),
+  duration: z.string()
 });
 
 export const defaultMyCompProps: z.infer<typeof CompositionProps> = {
-  title: "1000",
+  title: "2000",
   prefix: "Rp",
   suffix: "",
   duration: "4"
@@ -30,5 +30,5 @@ export const CompositionSearchbarProps = z.object({
 });
 
 export const defaultSearchbarProps: z.infer<typeof CompositionSearchbarProps> = {
-  title: "Perumahan affordable nempel Jakarta"
+  title: "Vermak Levis terdekat"
 };

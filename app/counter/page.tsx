@@ -5,7 +5,8 @@ import type { NextPage } from "next";
 import React, { useMemo, useState } from "react";
 import {
   COMP_NAME,
-  CompositionProps
+  CompositionProps,
+  defaultMyCompProps
 } from "../../types/constants";
 import { z } from "zod";
 import { RenderControls } from "../../components/rendercontrols/RenderControls";
@@ -15,11 +16,11 @@ import Footer from "../../components/Footer";
 
 const Counter: NextPage = () => {
   
-  const [text, setText] = useState<string>("1000");
+  const [text, setText] = useState<string>(defaultMyCompProps.title);
 
-  const [prefix, setPrefix] = useState<string>("Rp");
-  const [suffix, setSuffix] = useState<string>("");
-  const [duration, setDuration] = useState<string>("4");
+  const [prefix, setPrefix] = useState<string>(defaultMyCompProps.prefix);
+  const [suffix, setSuffix] = useState<string>(defaultMyCompProps.suffix);
+  const [duration, setDuration] = useState<string>(defaultMyCompProps.duration);
 
   const inputProps: z.infer<typeof CompositionProps> = useMemo(() => {
     return {

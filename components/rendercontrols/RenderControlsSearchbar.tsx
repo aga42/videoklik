@@ -105,6 +105,7 @@ export const RenderControlsSearchbar: React.FC<{
                   onClick={()=>{
                     saveProfile(credits-1)
                   }}
+                  // onClick={renderMedia}
                 >
                   Render video
                 </Button>
