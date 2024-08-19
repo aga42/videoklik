@@ -4,6 +4,8 @@ export const COMP_NAME = "MyComp";
 export const nProps = z.object({
 });
 
+export const renderProps: z.infer<typeof nProps> = {}
+
 export const CompositionProps = z.object({
   title: z.string(),
   prefix: z.string(),
@@ -28,5 +30,5 @@ export const CompositionSearchbarProps = z.object({
 });
 
 export const defaultSearchbarProps: z.infer<typeof CompositionSearchbarProps> = {
-  title: "1000"
+  title: "Perumahan affordable nempel Jakarta"
 };

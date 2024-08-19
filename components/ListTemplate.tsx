@@ -1,7 +1,7 @@
 
 import ItemTemplate from "./ItemTemplate";
 import Main from "../remotion/MyComp/Main";
-import { CompositionSearchbarProps, defaultMyCompProps } from "../types/constants";
+import { defaultMyCompProps, defaultSearchbarProps } from "../types/constants";
 import Searchbar from "../remotion/MyComp/Searchbar";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "../utils/motion";
@@ -23,7 +23,9 @@ const ListTemplate = () => {
     {
       title: "Search Bar",
       component: Searchbar,
-      inputProps: CompositionSearchbarProps,
+      inputProps: {
+        title: defaultSearchbarProps.title
+      },
       link: "/search"
     }
   ]

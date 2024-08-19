@@ -4,8 +4,8 @@ import { Player } from "@remotion/player";
 import type { NextPage } from "next";
 import React, { useMemo, useState } from "react";
 import {
-  CompositionProps,
-  defaultMyCompProps
+  COMP_NAME,
+  CompositionProps
 } from "../../types/constants";
 import { z } from "zod";
 import { RenderControls } from "../../components/rendercontrols/RenderControls";
@@ -15,7 +15,7 @@ import Footer from "../../components/Footer";
 
 const Counter: NextPage = () => {
   
-  const [text, setText] = useState<string>(defaultMyCompProps.title);
+  const [text, setText] = useState<string>("1000");
 
   const [prefix, setPrefix] = useState<string>("Rp");
   const [suffix, setSuffix] = useState<string>("");
@@ -66,7 +66,7 @@ const Counter: NextPage = () => {
                 duration={duration}
                 setDuration={setDuration}
                 inputProps={inputProps}
-                compositionName="MyComp"
+                compositionName={COMP_NAME}
               ></RenderControls>
             </div>
             

@@ -60,14 +60,10 @@ export const RenderControls: React.FC<{
     const fetchProfile = async () => {
 
       try {
-
-          console.log(`cookie user id ${cookiesUserId}`)
-
           const response = await fetch(`api/profile/${cookiesUserId}`)
           const data = await response.json()
 
           setcredits(data.credits)
-          console.log(`dapet credit ${data.credits}`)
 
       } catch (error) {
         console.log(error)
@@ -136,9 +132,7 @@ export const RenderControls: React.FC<{
                   disabled={state.status === "invoking"}
                   loading={state.status === "invoking"}
                   onClick={()=>{
-                    console.log(`credit before ${credits}`)
                     saveProfile(credits-1)
-                    console.log(`credit after ${credits}`)
                   }}
                 >
                   Render video

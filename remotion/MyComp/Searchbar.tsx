@@ -1,12 +1,12 @@
 "use client";
 
 import { AbsoluteFill, Sequence } from "remotion";
-import { CompositionSearchbarProps } from "../../types/constants";
+import { CompositionProps } from "../../types/constants";
 import { z } from "zod";
 import RoundedBox from "../../components/RoundedBox";
 import TypingText from "../../components/TypingText";
  
-export const Searchbar = ({ title }: z.infer<typeof CompositionSearchbarProps>) => {
+export const Searchbar = ({ title }: z.infer<typeof CompositionProps>) => {
  
   return (
     <div>
@@ -23,7 +23,7 @@ export const Searchbar = ({ title }: z.infer<typeof CompositionSearchbarProps>) 
         <RoundedBox></RoundedBox>
       </Sequence>
       <Sequence from={15} className="mt-80 ml-16">
-        <TypingText title="Videoklik.com"></TypingText>
+        <TypingText title={`${title}`}></TypingText>
       </Sequence>
       
     </AbsoluteFill>

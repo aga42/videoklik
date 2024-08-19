@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { useRendering } from "../../helpers/use-rendering";
-import { CompositionSearchbarProps } from "../../types/constants";
+import { CompositionProps } from "../../types/constants";
 import { AlignEnd } from "./../AlignEnd";
 import { Button } from "./../Button";
 import { InputContainer } from "./../Container";
@@ -14,13 +14,14 @@ import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 
 export const RenderControlsSearchbar: React.FC<{
+
   text: string;
   setText: React.Dispatch<React.SetStateAction<string>>;
   compositionName: string;
-  
-  inputProps: z.infer<typeof CompositionSearchbarProps>;
+  inputProps: z.infer<typeof CompositionProps>;
+
 }> = ({ text, setText, inputProps, compositionName }) => {
-  // const { renderMedia, state, undo } = useRendering(COMP_NAME, inputProps);
+  
   const { renderMedia, state, undo } = useRendering(compositionName, inputProps);
 
   const [credits, setcredits] = useState(0)
@@ -101,7 +102,9 @@ export const RenderControlsSearchbar: React.FC<{
                   disabled={state.status === "invoking"}
                   // disabled={true}
                   loading={state.status === "invoking"}
-                  onClick={renderMedia}
+                  onClick={()=>{
+                    saveProfile(credits-1)
+                  }}
                 >
                   Render video
                 </Button>

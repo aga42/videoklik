@@ -4,7 +4,7 @@ import { Player } from "@remotion/player";
 import type { NextPage } from "next";
 import React, { useMemo, useState } from "react";
 import {
-  CompositionSearchbarProps,
+  CompositionProps,
   defaultSearchbarProps
 } from "../../types/constants";
 import { z } from "zod";
@@ -16,9 +16,12 @@ const Searchbarpage: NextPage = () => {
   
   const [text, setText] = useState<string>(defaultSearchbarProps.title);
 
-  const inputProps: z.infer<typeof CompositionSearchbarProps> = useMemo(() => {
+  const inputProps: z.infer<typeof CompositionProps> = useMemo(() => {
     return {
-      title: text
+      title: text,
+      prefix: "",
+      suffix: "",
+      duration: ""
     };
   }, [text]);
 
