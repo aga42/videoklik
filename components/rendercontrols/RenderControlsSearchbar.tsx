@@ -100,12 +100,10 @@ export const RenderControlsSearchbar: React.FC<{
             <Link href="https://toathoule.com/4/7892388" target="blank">
             <Button
                   disabled={state.status === "invoking"}
-                  // disabled={true}
                   loading={state.status === "invoking"}
                   onClick={()=>{
                     saveProfile(credits-1)
                   }}
-                  // onClick={renderMedia}
                 >
                   Render video
                 </Button>

@@ -1,11 +1,6 @@
 import { z } from "zod";
 export const COMP_NAME = "MyComp";
 
-export const nProps = z.object({
-});
-
-export const renderProps: z.infer<typeof nProps> = {}
-
 export const CompositionProps = z.object({
   title: z.string(),
   prefix: z.string(),

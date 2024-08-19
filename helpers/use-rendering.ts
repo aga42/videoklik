@@ -74,7 +74,6 @@ export const useRendering = (
             break;
           }
           case "done": {
-            console.log(inputProps)
             setState({
               size: result.size,
               url: result.url,

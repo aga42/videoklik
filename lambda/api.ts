@@ -48,8 +48,6 @@ export const renderVideo = async ({
     inputProps,
   };
 
-  console.log(inputProps)
-
   return makeRequest<RenderMediaOnLambdaOutput>("/api/lambda/render", body);
 };
 

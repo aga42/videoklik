@@ -1,9 +1,9 @@
 import { z } from "zod";
-import { CompositionProps, nProps } from "./constants";
+import { CompositionProps } from "./constants";
 
 export const RenderRequest = z.object({
   id: z.string(),
-  inputProps: nProps,
+  inputProps: CompositionProps,
 });
 
 export const ProgressRequest = z.object({
