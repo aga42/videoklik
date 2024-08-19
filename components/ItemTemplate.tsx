@@ -42,7 +42,7 @@ const ItemTemplate = ({ key, title, component, inputProps, link }: ItemTemplateP
                   autoPlay
                   allowFullscreen = {false}
                   showVolumeControls = {false}
-                  // loop
+                  loop
                 />
         </div>
         <div className=" shadow-md border border-gray-100 hover:border-fuchsia-200 bg-gray-100 hover:bg-fuchsia-200 rounded-b-xl text-gray-600 sm:text-xl text-base py-4 pl-4 mb-8">

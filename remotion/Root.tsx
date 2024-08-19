@@ -8,6 +8,8 @@ import {
 import { NextLogo } from "./MyComp/NextLogo";
 import Main from "./MyComp/Main";
 import Searchbar from "./MyComp/Searchbar";
+import IOSNotif from "./MyComp/IOSNotif";
+import InstagramAccount from "./MyComp/InstagramAccount";
 
 export const RemotionRoot: React.FC = () => {
 
@@ -36,7 +38,8 @@ export const RemotionRoot: React.FC = () => {
           title: defaultMyCompProps.title,
           suffix: defaultMyCompProps.suffix,
           prefix: defaultMyCompProps.prefix,
-          duration: defaultMyCompProps.duration
+          duration: defaultMyCompProps.duration,
+          desc: defaultMyCompProps.desc
         }}
       />
       <Composition
@@ -50,7 +53,39 @@ export const RemotionRoot: React.FC = () => {
           title: defaultSearchbarProps.title,
           suffix: defaultMyCompProps.suffix,
           prefix: defaultMyCompProps.prefix,
-          duration: defaultMyCompProps.duration
+          duration: defaultMyCompProps.duration,
+          desc: defaultMyCompProps.desc
+        }}
+      />
+      <Composition
+        id="iOSNotif"
+        component={IOSNotif}
+        durationInFrames={120}
+        fps={30}
+        width={1280}
+        height={720}
+        defaultProps={{
+          title: defaultSearchbarProps.title,
+          suffix: defaultMyCompProps.suffix,
+          prefix: defaultMyCompProps.prefix,
+          duration: defaultMyCompProps.duration,
+          desc: defaultMyCompProps.desc
+        }}
+      />
+      <Composition
+        id="InstagramAccount"
+        component={InstagramAccount}
+        durationInFrames={90}
+        fps={30}
+        width={1280}
+        height={720}
+        schema={CompositionProps}
+        defaultProps={{
+          title: defaultSearchbarProps.title,
+          suffix: defaultMyCompProps.suffix,
+          prefix: defaultMyCompProps.prefix,
+          duration: defaultMyCompProps.duration,
+          desc: defaultMyCompProps.desc
         }}
       />
     </>

@@ -5,14 +5,16 @@ export const CompositionProps = z.object({
   title: z.string(),
   prefix: z.string(),
   suffix: z.string(),
-  duration: z.string()
+  duration: z.string(),
+  desc: z.string()
 });
 
 export const defaultMyCompProps: z.infer<typeof CompositionProps> = {
   title: "2000",
   prefix: "Rp",
   suffix: "",
-  duration: "4"
+  duration: "4",
+  desc: ""
 };
 
 export const DURATION_IN_FRAMES = 1;
