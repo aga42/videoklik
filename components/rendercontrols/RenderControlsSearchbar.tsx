@@ -27,8 +27,7 @@ export const RenderControlsSearchbar: React.FC<{
   const [credits, setcredits] = useState(0)
   const saveProfile = async (newCredit: number) => {
     try {
-      console.log(`saving ${cookiesUserId}`)
-      const response = await fetch(`api/profile/credit/${cookiesUserId}`, {
+      const response = await fetch(`../api/profile/credit/${cookiesUserId}`, {
         method: "PATCH",
         body: JSON.stringify({
           credits: newCredit
@@ -58,7 +57,7 @@ export const RenderControlsSearchbar: React.FC<{
 
           console.log(`cookie user id ${cookiesUserId}`)
 
-          const response = await fetch(`api/profile/${cookiesUserId}`)
+          const response = await fetch(`../api/profile/${cookiesUserId}`)
           const data = await response.json()
 
           setcredits(data.credits)

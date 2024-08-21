@@ -56,7 +56,7 @@ const Hero = () => {
                         data-twe-ripple-color="light"
                         onClick={()=> 
                             {
-                                session?.user ? router.push("/counter")
+                                session?.user ? router.push("/template")
                                 :
                                 providers && Object.values(providers).map((provider: any) => (signIn(provider.id)))}
                             }

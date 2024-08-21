@@ -4,17 +4,18 @@ import { Player } from "@remotion/player";
 import type { NextPage } from "next";
 import React, { useMemo, useState } from "react";
 import {
-  CompositionProps,
-  defaultSearchbarProps
-} from "../../types/constants";
+  CompositionProps
+} from "../../../types/constants";
 import { z } from "zod";
-import Header from "../../components/Header";
-import Searchbar from "../../remotion/MyComp/Searchbar";
-import { RenderControlsSearchbar } from "../../components/rendercontrols/RenderControlsSearchbar";
+import Header from "../../../components/Header";
+import { RenderControlsLogoAnimation } from "../../../components/rendercontrols/RenderControlsLogoAnimation";
+import LogoAnimation from "../../../remotion/MyComp/LogoAnimation";
 
-const Searchbarpage: NextPage = () => {
+const LogoAnimationpage: NextPage = () => {
   
-  const [text, setText] = useState<string>(defaultSearchbarProps.title);
+  const [text, setText] = useState<string>("My Company");
+  const [desc, setDesc] = useState<string>("Best Culture From Future");
+  const [image, setImage] = useState<string>("");
 
   const inputProps: z.infer<typeof CompositionProps> = useMemo(() => {
     return {
@@ -22,10 +23,10 @@ const Searchbarpage: NextPage = () => {
       prefix: "",
       suffix: "",
       duration: "",
-      desc: "",
-      image: ""
+      desc: desc,
+      image: image
     };
-  }, [text]);
+  }, [text, desc, image]);
 
   return (
     <main className="flex min-h-screen flex-col bg-white">
@@ -34,7 +35,7 @@ const Searchbarpage: NextPage = () => {
           <div className="sm:mx-44 sm:mb-16 pt-8 sm:pt-16">
             <Player
                   className=" mx-auto sm:mx-0 sm:left-1/2"
-                  component={Searchbar}
+                  component={LogoAnimation}
                   inputProps={inputProps}
                   durationInFrames={ 120}
                   fps={30}
@@ -53,12 +54,16 @@ const Searchbarpage: NextPage = () => {
           
           <div className="mt-8 sm:mt-16 sm:mb-0 mb-8">
             <div className="sm:w-1/3 max-w-max sm:max-w-full mx-auto sm:mx-0 sm:left-1/2 sm:ml-44">
-              <RenderControlsSearchbar
+              <RenderControlsLogoAnimation
                 text={text}
                 setText={setText}
+                desc={desc}
+                setDesc={setDesc}
+                image={image}
+                setImage={setImage}
                 inputProps={inputProps}
-                compositionName="Searchbar"
-              ></RenderControlsSearchbar>
+                compositionName="LogoAnimation"
+              ></RenderControlsLogoAnimation>
             </div>
             
           </div>
@@ -67,4 +72,4 @@ const Searchbarpage: NextPage = () => {
   );
 };
 
-export default Searchbarpage;
+export default LogoAnimationpage;

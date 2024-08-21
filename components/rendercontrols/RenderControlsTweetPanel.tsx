@@ -34,8 +34,7 @@ export const RenderControlsTweetPanel: React.FC<{
   const [credits, setcredits] = useState(0)
   const saveProfile = async (newCredit: number) => {
     try {
-      console.log(`saving ${cookiesUserId}`)
-      const response = await fetch(`api/profile/credit/${cookiesUserId}`, {
+      const response = await fetch(`../api/profile/credit/${cookiesUserId}`, {
         method: "PATCH",
         body: JSON.stringify({
           credits: newCredit
@@ -65,7 +64,7 @@ export const RenderControlsTweetPanel: React.FC<{
 
           console.log(`cookie user id ${cookiesUserId}`)
 
-          const response = await fetch(`api/profile/${cookiesUserId}`)
+          const response = await fetch(`../api/profile/${cookiesUserId}`)
           const data = await response.json()
 
           setcredits(data.credits)
@@ -105,7 +104,7 @@ export const RenderControlsTweetPanel: React.FC<{
               maxLength={24}
             ></Input>
           </div>
-          <div className=" my-4">
+          <div>
             <Input
               disabled={state.status === "invoking"}
               setText={setDesc}
@@ -115,7 +114,7 @@ export const RenderControlsTweetPanel: React.FC<{
               maxLength={48}
             ></Input>
           </div>
-          <div className=" my-4">
+          <div className="w-fit mt-4">
             <UploadButton
               endpoint="imageUploader"
               onClientUploadComplete={(res) => {

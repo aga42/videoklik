@@ -12,24 +12,26 @@ import { Spacing } from "./../Spacing";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
+import { UploadButton } from "../../utils/uploadthing";
 
-export const RenderControlsiOSNotif: React.FC<{
+export const RenderControlsLogoAnimation: React.FC<{
 
   text: string;
   setText: React.Dispatch<React.SetStateAction<string>>;
   desc: string;
   setDesc: React.Dispatch<React.SetStateAction<string>>;
+  image: string;
+  setImage: React.Dispatch<React.SetStateAction<string>>;
   compositionName: string;
   inputProps: z.infer<typeof CompositionProps>;
 
-}> = ({ text, setText, desc, setDesc, inputProps, compositionName }) => {
+}> = ({ text, setText, desc, setDesc, image, setImage, inputProps, compositionName }) => {
   
   const { renderMedia, state, undo } = useRendering(compositionName, inputProps);
 
   const [credits, setcredits] = useState(0)
   const saveProfile = async (newCredit: number) => {
     try {
-      console.log(`saving ${cookiesUserId}`)
       const response = await fetch(`../api/profile/credit/${cookiesUserId}`, {
         method: "PATCH",
         body: JSON.stringify({
@@ -86,19 +88,33 @@ export const RenderControlsiOSNotif: React.FC<{
             disabled={state.status === "invoking"}
             setText={setText}
             text={text}
-            placeholder="Title "
+            placeholder="Company Name (max 10 char)"
             type="text"
-            maxLength={24}
+            maxLength={10}
           ></Input>
-          <div className=" my-4">
+          <div className="my-4">
             <Input
               disabled={state.status === "invoking"}
               setText={setDesc}
               text={desc}
-              placeholder="Message"
+              placeholder="Tagline (max 30 char)"
               type="text"
-              maxLength={48}
+              maxLength={30}
             ></Input>
+          </div>
+          <div className="w-full">
+            <UploadButton
+              endpoint="imageUploader"
+              onClientUploadComplete={(res) => {
+                // Do something with the response
+                console.log("Files: ", res);
+                setImage(res?.at(0)?.url ?? '')
+              }}
+              onUploadError={(error: Error) => {
+                // Do something with the error.
+                alert(`ERROR! ${error.message}`);
+              }}
+            />
           </div>
           
           <Spacing></Spacing>

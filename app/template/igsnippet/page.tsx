@@ -5,16 +5,15 @@ import type { NextPage } from "next";
 import React, { useMemo, useState } from "react";
 import {
   CompositionProps
-} from "../../types/constants";
+} from "../../../types/constants";
 import { z } from "zod";
-import Header from "../../components/Header";
-import IOSNotif from "../../remotion/MyComp/IOSNotif";
-import { RenderControlsiOSNotif } from "../../components/rendercontrols/RenderControlsiOSNotif";
+import Header from "../../../components/Header";
+import InstagramAccount from "../../../remotion/MyComp/InstagramAccount";
+import { RenderControlsIGSnippet } from "../../../components/rendercontrols/RenderControlsIGSnippet";
 
-const IOSNotifpage: NextPage = () => {
+const IGSnippetpage: NextPage = () => {
   
-  const [text, setText] = useState<string>("Videoklik");
-  const [desc, setDesc] = useState<string>("Get special discount only for you");
+  const [text, setText] = useState<string>("@Petshop.official");
 
   const inputProps: z.infer<typeof CompositionProps> = useMemo(() => {
     return {
@@ -22,10 +21,10 @@ const IOSNotifpage: NextPage = () => {
       prefix: "",
       suffix: "",
       duration: "",
-      desc: desc,
+      desc: "",
       image: ""
     };
-  }, [text, desc]);
+  }, [text]);
 
   return (
     <main className="flex min-h-screen flex-col bg-white">
@@ -34,7 +33,7 @@ const IOSNotifpage: NextPage = () => {
           <div className="sm:mx-44 sm:mb-16 pt-8 sm:pt-16">
             <Player
                   className=" mx-auto sm:mx-0 sm:left-1/2"
-                  component={IOSNotif}
+                  component={InstagramAccount}
                   inputProps={inputProps}
                   durationInFrames={ 120}
                   fps={30}
@@ -53,14 +52,12 @@ const IOSNotifpage: NextPage = () => {
           
           <div className="mt-8 sm:mt-16 sm:mb-0 mb-8">
             <div className="sm:w-1/3 max-w-max sm:max-w-full mx-auto sm:mx-0 sm:left-1/2 sm:ml-44">
-              <RenderControlsiOSNotif
+              <RenderControlsIGSnippet
                 text={text}
                 setText={setText}
-                desc={desc}
-                setDesc={setDesc}
                 inputProps={inputProps}
-                compositionName="iOSNotif"
-              ></RenderControlsiOSNotif>
+                compositionName="InstagramAccount"
+              ></RenderControlsIGSnippet>
             </div>
             
           </div>
@@ -69,4 +66,4 @@ const IOSNotifpage: NextPage = () => {
   );
 };
 
-export default IOSNotifpage;
+export default IGSnippetpage;

@@ -22,7 +22,7 @@ const ListTemplate = () => {
         suffix: defaultMyCompProps.suffix,
         duration: defaultMyCompProps.duration
       },
-      link: "/counter"
+      link: "/template/counter"
     },
     {
       title: "Search Bar",
@@ -30,17 +30,17 @@ const ListTemplate = () => {
       inputProps: {
         title: defaultSearchbarProps.title
       },
-      link: "/search"
+      link: "/template/search"
     },
     {
-      title: "Notification iMessage",
+      title: "iMessage Notification",
       component: IOSNotif,
       inputProps: {
         title: "Videoklik",
         desc: "Get special discount only for you",
         image: ""
       },
-      link: "/notifios"
+      link: "/template/iosnotif"
     },
     {
       title: "IG Snippet",
@@ -48,7 +48,7 @@ const ListTemplate = () => {
       inputProps: {
         title: "@Petshop.official"
       },
-      link: "/"
+      link: "/template/igsnippet"
     },
     {
       title: "Logo Animation",
@@ -58,7 +58,7 @@ const ListTemplate = () => {
         desc: "Best Culture From Future",
         image: "/images/logov.png"
       },
-      link: "/"
+      link: "/template/logoanimation"
     },
     {
       title: "Tweet Card",
@@ -69,7 +69,7 @@ const ListTemplate = () => {
         desc: "This is my first tweet. Hope someone can bring me a beautiful day.",
         image: ""
       },
-      link: "/"
+      link: "/template/tweetpanel"
     }
   ]
 

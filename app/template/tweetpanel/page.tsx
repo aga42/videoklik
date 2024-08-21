@@ -5,11 +5,11 @@ import type { NextPage } from "next";
 import React, { useMemo, useState } from "react";
 import {
   CompositionProps
-} from "../../types/constants";
+} from "../../../types/constants";
 import { z } from "zod";
-import Header from "../../components/Header";
-import { RenderControlsTweetPanel } from "../../components/rendercontrols/RenderControlsTweetPanel";
-import TweetPanel from "../../remotion/MyComp/TweetPanel";
+import Header from "../../../components/Header";
+import { RenderControlsTweetPanel } from "../../../components/rendercontrols/RenderControlsTweetPanel";
+import TweetPanel from "../../../remotion/MyComp/TweetPanel";
 
 const TweetPanelpage: NextPage = () => {
   

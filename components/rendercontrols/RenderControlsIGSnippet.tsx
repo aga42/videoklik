@@ -13,23 +13,20 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 
-export const RenderControlsiOSNotif: React.FC<{
+export const RenderControlsIGSnippet: React.FC<{
 
   text: string;
   setText: React.Dispatch<React.SetStateAction<string>>;
-  desc: string;
-  setDesc: React.Dispatch<React.SetStateAction<string>>;
   compositionName: string;
   inputProps: z.infer<typeof CompositionProps>;
 
-}> = ({ text, setText, desc, setDesc, inputProps, compositionName }) => {
+}> = ({ text, setText, inputProps, compositionName }) => {
   
   const { renderMedia, state, undo } = useRendering(compositionName, inputProps);
 
   const [credits, setcredits] = useState(0)
   const saveProfile = async (newCredit: number) => {
     try {
-      console.log(`saving ${cookiesUserId}`)
       const response = await fetch(`../api/profile/credit/${cookiesUserId}`, {
         method: "PATCH",
         body: JSON.stringify({
@@ -86,20 +83,10 @@ export const RenderControlsiOSNotif: React.FC<{
             disabled={state.status === "invoking"}
             setText={setText}
             text={text}
-            placeholder="Title "
+            placeholder="Search label"
             type="text"
             maxLength={24}
           ></Input>
-          <div className=" my-4">
-            <Input
-              disabled={state.status === "invoking"}
-              setText={setDesc}
-              text={desc}
-              placeholder="Message"
-              type="text"
-              maxLength={48}
-            ></Input>
-          </div>
           
           <Spacing></Spacing>
           <div className=" mt-8 mx-auto">

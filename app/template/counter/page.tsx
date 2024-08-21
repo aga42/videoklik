@@ -7,12 +7,12 @@ import {
   COMP_NAME,
   CompositionProps,
   defaultMyCompProps
-} from "../../types/constants";
+} from "../../../types/constants";
 import { z } from "zod";
-import { RenderControls } from "../../components/rendercontrols/RenderControls";
-import Header from "../../components/Header";
-import Main from "../../remotion/MyComp/Main";
-import Footer from "../../components/Footer";
+import { RenderControls } from "../../../components/rendercontrols/RenderControls";
+import Header from "../../../components/Header";
+import Main from "../../../remotion/MyComp/Main";
+import Footer from "../../../components/Footer";
 
 const Counter: NextPage = () => {
   
