@@ -27,7 +27,9 @@ const Counter: NextPage = () => {
       title: text,
       prefix: prefix,
       suffix: suffix,
-      duration: duration
+      duration: duration,
+      desc: "",
+      image: ""
     };
   }, [text, prefix, suffix, duration]);
 

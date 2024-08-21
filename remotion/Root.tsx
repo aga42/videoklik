@@ -3,13 +3,16 @@ import {
   defaultMyCompProps,
   CompositionProps,
   COMP_NAME,
-  defaultSearchbarProps
+  defaultSearchbarProps,
+  defaultTweetProps
 } from "../types/constants";
 import { NextLogo } from "./MyComp/NextLogo";
 import Main from "./MyComp/Main";
 import Searchbar from "./MyComp/Searchbar";
 import IOSNotif from "./MyComp/IOSNotif";
 import InstagramAccount from "./MyComp/InstagramAccount";
+import TweetPanel from "./MyComp/TweetPanel";
+import LogoAnimation from "./MyComp/LogoAnimation";
 
 export const RemotionRoot: React.FC = () => {
 
@@ -39,7 +42,8 @@ export const RemotionRoot: React.FC = () => {
           suffix: defaultMyCompProps.suffix,
           prefix: defaultMyCompProps.prefix,
           duration: defaultMyCompProps.duration,
-          desc: defaultMyCompProps.desc
+          desc: defaultMyCompProps.desc,
+          image: defaultMyCompProps.image
         }}
       />
       <Composition
@@ -54,7 +58,8 @@ export const RemotionRoot: React.FC = () => {
           suffix: defaultMyCompProps.suffix,
           prefix: defaultMyCompProps.prefix,
           duration: defaultMyCompProps.duration,
-          desc: defaultMyCompProps.desc
+          desc: defaultMyCompProps.desc,
+          image: defaultMyCompProps.image
         }}
       />
       <Composition
@@ -69,7 +74,8 @@ export const RemotionRoot: React.FC = () => {
           suffix: defaultMyCompProps.suffix,
           prefix: defaultMyCompProps.prefix,
           duration: defaultMyCompProps.duration,
-          desc: defaultMyCompProps.desc
+          desc: defaultMyCompProps.desc,
+          image: defaultMyCompProps.image
         }}
       />
       <Composition
@@ -85,7 +91,42 @@ export const RemotionRoot: React.FC = () => {
           suffix: defaultMyCompProps.suffix,
           prefix: defaultMyCompProps.prefix,
           duration: defaultMyCompProps.duration,
-          desc: defaultMyCompProps.desc
+          desc: defaultMyCompProps.desc,
+          image: defaultMyCompProps.image
+        }}
+      />
+      <Composition
+        id="TweetPanel"
+        component={TweetPanel}
+        durationInFrames={90}
+        fps={30}
+        width={1280}
+        height={720}
+        schema={CompositionProps}
+        defaultProps={{
+          title: defaultTweetProps.title,
+          suffix: defaultTweetProps.suffix,
+          prefix: defaultTweetProps.prefix,
+          duration: defaultTweetProps.duration,
+          desc: defaultTweetProps.desc,
+          image: defaultTweetProps.image
+        }}
+      />
+      <Composition
+        id="LogoAnimation"
+        component={LogoAnimation}
+        durationInFrames={90}
+        fps={30}
+        width={1280}
+        height={720}
+        schema={CompositionProps}
+        defaultProps={{
+          title: "My Company",
+          suffix: defaultTweetProps.suffix,
+          prefix: defaultTweetProps.prefix,
+          duration: defaultTweetProps.duration,
+          desc: "Best culture from future",
+          image: defaultTweetProps.image
         }}
       />
     </>

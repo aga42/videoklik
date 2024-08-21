@@ -6,7 +6,8 @@ export const CompositionProps = z.object({
   prefix: z.string(),
   suffix: z.string(),
   duration: z.string(),
-  desc: z.string()
+  desc: z.string(),
+  image: z.string()
 });
 
 export const defaultMyCompProps: z.infer<typeof CompositionProps> = {
@@ -14,7 +15,8 @@ export const defaultMyCompProps: z.infer<typeof CompositionProps> = {
   prefix: "Rp",
   suffix: "",
   duration: "4",
-  desc: ""
+  desc: "",
+  image: ""
 };
 
 export const DURATION_IN_FRAMES = 1;
@@ -28,4 +30,13 @@ export const CompositionSearchbarProps = z.object({
 
 export const defaultSearchbarProps: z.infer<typeof CompositionSearchbarProps> = {
   title: "Vermak Levis terdekat"
+};
+
+export const defaultTweetProps: z.infer<typeof CompositionProps> = {
+  title: "Fullname",
+  prefix: "@username",
+  suffix: "",
+  duration: "4",
+  desc: "This is my first tweet",
+  image: ""
 };

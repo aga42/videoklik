@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "../utils/motion";
 import IOSNotif from "../remotion/MyComp/IOSNotif";
 import InstagramAccount from "../remotion/MyComp/InstagramAccount";
+import TweetPanel from "../remotion/MyComp/TweetPanel";
+import LogoAnimation from "../remotion/MyComp/LogoAnimation";
 
 const ListTemplate = () => {
 
@@ -35,15 +37,37 @@ const ListTemplate = () => {
       component: IOSNotif,
       inputProps: {
         title: "Videoklik",
-        desc: "Get special discount only for you"
+        desc: "Get special discount only for you",
+        image: ""
       },
-      link: "/"
+      link: "/notifios"
     },
     {
       title: "IG Snippet",
       component: InstagramAccount,
       inputProps: {
         title: "@Petshop.official"
+      },
+      link: "/"
+    },
+    {
+      title: "Logo Animation",
+      component: LogoAnimation,
+      inputProps: {
+        title: "My Company",
+        desc: "Best Culture From Future",
+        image: "/images/logov.png"
+      },
+      link: "/"
+    },
+    {
+      title: "Tweet Card",
+      component: TweetPanel,
+      inputProps: {
+        title: "Aga Ariesta",
+        prefix: "@aga_ariesta",
+        desc: "This is my first tweet. Hope someone can bring me a beautiful day.",
+        image: ""
       },
       link: "/"
     }

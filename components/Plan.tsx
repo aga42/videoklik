@@ -133,7 +133,7 @@ const Plan = () => {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        'Authorization': `Basic U0ItTWlkLXNlcnZlci1SbS1XVnFMOUFmbjJVckxxYU9rQ0FyRFU6`
+        'Authorization': process.env.NEXT_PUBLIC_MIDTRANS_AUTH!
       },
       body: JSON.stringify(body)
     }).then(res => res.json()).then(res => {

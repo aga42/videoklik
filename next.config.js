@@ -2,11 +2,19 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'uploadthing.com'
+      }
+    ]
+  },
   async rewrites() {
     return [
       {
         source: '/api/payment',
-        destination: 'https://app.sandbox.midtrans.com/snap/v1/transactions',
+        destination: process.env.NEXT_PUBLIC_MIDTRANS_SNAP_URL,
       },
     ]
   }

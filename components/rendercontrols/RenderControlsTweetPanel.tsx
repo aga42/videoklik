@@ -12,17 +12,22 @@ import { Spacing } from "./../Spacing";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
+import { UploadButton } from "../../utils/uploadthing";
 
-export const RenderControlsiOSNotif: React.FC<{
+export const RenderControlsTweetPanel: React.FC<{
 
   text: string;
   setText: React.Dispatch<React.SetStateAction<string>>;
+  username: string;
+  setUsername: React.Dispatch<React.SetStateAction<string>>;
   desc: string;
   setDesc: React.Dispatch<React.SetStateAction<string>>;
+  image: string;
+  setImage: React.Dispatch<React.SetStateAction<string>>;
   compositionName: string;
   inputProps: z.infer<typeof CompositionProps>;
 
-}> = ({ text, setText, desc, setDesc, inputProps, compositionName }) => {
+}> = ({ text, setText, username, setUsername, desc, setDesc, image, setImage, inputProps, compositionName }) => {
   
   const { renderMedia, state, undo } = useRendering(compositionName, inputProps);
 
@@ -86,10 +91,20 @@ export const RenderControlsiOSNotif: React.FC<{
             disabled={state.status === "invoking"}
             setText={setText}
             text={text}
-            placeholder="Title "
+            placeholder="Fullname"
             type="text"
             maxLength={24}
           ></Input>
+          <div className=" my-4">
+            <Input
+              disabled={state.status === "invoking"}
+              setText={setUsername}
+              text={username}
+              placeholder="Username"
+              type="text"
+              maxLength={24}
+            ></Input>
+          </div>
           <div className=" my-4">
             <Input
               disabled={state.status === "invoking"}
@@ -99,6 +114,20 @@ export const RenderControlsiOSNotif: React.FC<{
               type="text"
               maxLength={48}
             ></Input>
+          </div>
+          <div className=" my-4">
+            <UploadButton
+              endpoint="imageUploader"
+              onClientUploadComplete={(res) => {
+                // Do something with the response
+                console.log("Files: ", res);
+                setImage(res?.at(0)?.url ?? '')
+              }}
+              onUploadError={(error: Error) => {
+                // Do something with the error.
+                alert(`ERROR! ${error.message}`);
+              }}
+            />
           </div>
           
           <Spacing></Spacing>
