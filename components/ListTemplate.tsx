@@ -9,10 +9,11 @@ import IOSNotif from "../remotion/MyComp/IOSNotif";
 import InstagramAccount from "../remotion/MyComp/InstagramAccount";
 import TweetPanel from "../remotion/MyComp/TweetPanel";
 import LogoAnimation from "../remotion/MyComp/LogoAnimation";
+import { ListTemplateProps } from "../types";
 
-const ListTemplate = () => {
+const ListTemplate = ({ isLandingPage }: ListTemplateProps) => {
 
-  const data = [
+  var data = [
     {
       title: "Value Counter",
       component: Main,
@@ -73,6 +74,8 @@ const ListTemplate = () => {
     }
   ]
 
+  if(isLandingPage) data = data.slice(0, 4)
+
   return(
     <motion.div
             variants={staggerContainer()}
@@ -81,7 +84,7 @@ const ListTemplate = () => {
             viewport={{ once: true, amount: 0.25 }}
         >
         <motion.div variants={fadeIn('up', 'tween', 0.1, 0.5)}>
-          <ul className="md:mx-96 lg:mx-96 mx-8 mt-10 sm:mt-32 mb-20 md:mb-40 items-center md:grid md:grid-cols-2 md:gap-8">
+          <ul className="md:mx-96 lg:mx-96 mx-8 mt-10 sm:mt-32 mb-4 items-center md:grid md:grid-cols-2 md:gap-8">
               {data.map((item: any, idx) =>
                   {
                       return <ItemTemplate

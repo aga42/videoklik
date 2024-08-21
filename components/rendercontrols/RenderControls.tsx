@@ -30,6 +30,7 @@ export const RenderControls: React.FC<{
   const { renderMedia, state, undo } = useRendering(compositionName, inputProps);
   
   const [credits, setcredits] = useState(0)
+  const [isPro, setisPro] = useState(false)
   const saveProfile = async (newCredit: number) => {
     try {
       const response = await fetch(`../api/profile/credit/${cookiesUserId}`, {
@@ -63,6 +64,7 @@ export const RenderControls: React.FC<{
           const data = await response.json()
 
           setcredits(data.credits)
+          setisPro(data.is_pro_member)
 
       } catch (error) {
         console.log(error)
@@ -126,6 +128,19 @@ export const RenderControls: React.FC<{
             Not enough credits<a href="/pricing" className="text-fuchsia-500"> (Top up credits to render)</a>
             </div>
             :
+
+            isPro === true ?
+              <Button
+                  disabled={state.status === "invoking"}
+                  loading={state.status === "invoking"}
+                  onClick={()=>{
+                    saveProfile(credits-1)
+                  }}
+                >
+                  Render video
+              </Button>
+            :
+
             <Link href="https://toathoule.com/4/7892388" target="blank">
               <Button
                   disabled={state.status === "invoking"}
@@ -137,6 +152,7 @@ export const RenderControls: React.FC<{
                   Render video
               </Button>
             </Link>
+            
           }
           </div>
           {state.status === "error" ? (

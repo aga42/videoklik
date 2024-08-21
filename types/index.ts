@@ -30,3 +30,7 @@ export interface FaqCardProps{
     faqsList: any
     idx: any
 }
+
+export interface ListTemplateProps{
+    isLandingPage: boolean
+}
