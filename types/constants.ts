@@ -1,4 +1,5 @@
 import { z } from "zod";
+
 export const COMP_NAME = "MyComp";
 
 export const CompositionProps = z.object({
@@ -40,3 +41,4 @@ export const defaultTweetProps: z.infer<typeof CompositionProps> = {
   desc: "This is my first tweet",
   image: ""
 };
+
