@@ -34,3 +34,9 @@ export interface FaqCardProps{
 export interface ListTemplateProps{
     isLandingPage: boolean
 }
+
+export interface TemplatePaginationProps{
+    page: number;
+    setPage: React.Dispatch<React.SetStateAction<number>>;
+    choose: number;
+}

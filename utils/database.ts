@@ -11,8 +11,8 @@ export const connectToDB = async () => {
     }
 
     try {
-        await mongoose.connect("mongodb+srv://ituaga42:sMCAxebh8uBptbFy@cluster0.wwecvcn.mongodb.net/?retryWrites=true&w=majority", {
-            dbName: "videoklik",
+        await mongoose.connect(process.env.NEXT_PUBLIC_DATABASE_CONNECT!, {
+            dbName: process.env.NEXT_PUBLIC_DATABASE_NAME!,
         })
 
         isConnected = true;

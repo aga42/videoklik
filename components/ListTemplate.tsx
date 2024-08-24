@@ -10,6 +10,8 @@ import InstagramAccount from "../remotion/MyComp/InstagramAccount";
 import TweetPanel from "../remotion/MyComp/TweetPanel";
 import LogoAnimation from "../remotion/MyComp/LogoAnimation";
 import { ListTemplateProps } from "../types";
+import TemplatePagination from "./TemplatePagination";
+import { useState } from "react";
 
 const ListTemplate = ({ isLandingPage }: ListTemplateProps) => {
 
@@ -74,7 +76,31 @@ const ListTemplate = ({ isLandingPage }: ListTemplateProps) => {
     }
   ]
 
-  if(isLandingPage) data = data.slice(0, 4)
+  const size = 4
+
+  const [page, setPage] = useState(1)
+      
+  const showPagination = () => {
+    if(!isLandingPage){
+      return <TemplatePagination page={data.length / size} setPage={setPage} choose={page}></TemplatePagination>
+    }
+  }
+
+  function getData(page: number): any{
+
+    var startIndex = page === 1 ? 0 
+    : (page - 1) * size
+
+    var endIndex = page === 1 ? (page * size) 
+    : (page * size)
+
+    var dataPage = data.slice(startIndex, endIndex)
+
+    console.log(`${startIndex} dan ${endIndex}`)
+
+    return dataPage
+    
+  }
 
   return(
     <motion.div
@@ -85,7 +111,7 @@ const ListTemplate = ({ isLandingPage }: ListTemplateProps) => {
         >
         <motion.div variants={fadeIn('up', 'tween', 0.1, 0.5)}>
           <ul className="md:mx-96 lg:mx-96 mx-8 mt-10 sm:mt-32 mb-4 items-center md:grid md:grid-cols-2 md:gap-8">
-              {data.map((item: any, idx) =>
+              {getData(page).map((item: any, idx: any) =>
                   {
                       return <ItemTemplate
                                       key={idx}
@@ -98,6 +124,10 @@ const ListTemplate = ({ isLandingPage }: ListTemplateProps) => {
                   )}
           </ul>
         </motion.div>
+        
+        {
+          showPagination()
+        }
         
     </motion.div>
     
