@@ -7,6 +7,7 @@ export interface ItemTemplateProps{
     component: any
     inputProps: any
     link: string
+    durationInFrames: number
 }
 
 export interface HeaderProps{

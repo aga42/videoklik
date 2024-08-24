@@ -15,6 +15,8 @@ import TweetPanel from "./MyComp/TweetPanel";
 import LogoAnimation from "./MyComp/LogoAnimation";
 import TiktokComment from "./MyComp/TiktokComment";
 import YoutubeSubs from "./MyComp/YoutubeSubs";
+import LogoAnimation2 from "./MyComp/LogoAnimation2";
+import ChatAnimation from "./MyComp/ChatAnimation";
 
 export const RemotionRoot: React.FC = () => {
 
@@ -162,6 +164,40 @@ export const RemotionRoot: React.FC = () => {
           prefix: defaultTweetProps.prefix,
           duration: defaultTweetProps.duration,
           desc: "11.8k subscribers",
+          image: defaultTweetProps.image
+        }}
+      />
+      <Composition
+        id="LogoAnimation2"
+        component={LogoAnimation2}
+        durationInFrames={90}
+        fps={30}
+        width={1280}
+        height={720}
+        schema={CompositionProps}
+        defaultProps={{
+          title: "My Company",
+          suffix: defaultTweetProps.suffix,
+          prefix: defaultTweetProps.prefix,
+          duration: defaultTweetProps.duration,
+          desc: "",
+          image: defaultTweetProps.image
+        }}
+      />
+      <Composition
+        id="ChatAnimation"
+        component={ChatAnimation}
+        durationInFrames={150}
+        fps={30}
+        width={1280}
+        height={720}
+        schema={CompositionProps}
+        defaultProps={{
+          title: "Beli makanan yuk, apa ya yang enak",
+          suffix: "Kopi aja gak sih pengen yang seger - seger",
+          prefix: "ywdh sekalian aja coba cek grabfood ada diskon gak",
+          duration: defaultTweetProps.duration,
+          desc: "sip sip wait",
           image: defaultTweetProps.image
         }}
       />

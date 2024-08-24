@@ -54,6 +54,7 @@ const ListTemplate = ({ isLandingPage }: ListTemplateProps) => {
                                       component={item.component}
                                       inputProps={item.inputProps}
                                       link={item.link}
+                                      durationInFrames={item.durationInFrames}
                                       /> 
                   }
                   )}

@@ -7,6 +7,8 @@ import TweetPanel from "../remotion/MyComp/TweetPanel";
 import TiktokComment from "../remotion/MyComp/TiktokComment";
 import YoutubeSubs from "../remotion/MyComp/YoutubeSubs";
 import { defaultMyCompProps, defaultSearchbarProps } from "./constants";
+import LogoAnimation2 from "../remotion/MyComp/LogoAnimation2";
+import ChatAnimation from "../remotion/MyComp/ChatAnimation";
 
 export const dataTemplate = [
   {
@@ -18,7 +20,8 @@ export const dataTemplate = [
       suffix: defaultMyCompProps.suffix,
       duration: defaultMyCompProps.duration
     },
-    link: "/template/counter"
+    link: "/template/counter",
+    durationInFrames: 120
   },
   {
     title: "Search Bar",
@@ -26,7 +29,8 @@ export const dataTemplate = [
     inputProps: {
       title: defaultSearchbarProps.title
     },
-    link: "/template/search"
+    link: "/template/search",
+    durationInFrames: 120
   },
   {
     title: "iMessage Notification",
@@ -36,7 +40,8 @@ export const dataTemplate = [
       desc: "Get special discount only for you",
       image: ""
     },
-    link: "/template/iosnotif"
+    link: "/template/iosnotif",
+    durationInFrames: 120
   },
   {
     title: "IG Snippet",
@@ -44,7 +49,8 @@ export const dataTemplate = [
     inputProps: {
       title: "@Petshop.official"
     },
-    link: "/template/igsnippet"
+    link: "/template/igsnippet",
+    durationInFrames: 120
   },
   {
     title: "Logo Animation",
@@ -54,7 +60,8 @@ export const dataTemplate = [
       desc: "Best Culture From Future",
       image: "/images/logov.png"
     },
-    link: "/template/logoanimation"
+    link: "/template/logoanimation",
+    durationInFrames: 120
   },
   {
     title: "Tweet Card",
@@ -65,7 +72,8 @@ export const dataTemplate = [
       desc: "This is my first tweet. Hope someone can bring me a beautiful day.",
       image: ""
     },
-    link: "/template/tweetpanel"
+    link: "/template/tweetpanel",
+    durationInFrames: 120
   },
   {
     title: "Tiktok Comment",
@@ -75,7 +83,8 @@ export const dataTemplate = [
       desc: "I like the shoes that I buy before in England 1999",
       image: ""
     },
-    link: "/template/tiktokcomment"
+    link: "/template/tiktokcomment",
+    durationInFrames: 120
   },
   {
     title: "Youtube Subscribe",
@@ -85,6 +94,29 @@ export const dataTemplate = [
       desc: "11.8k subscribers",
       image: ""
     },
-    link: "/template/youtubesubs"
+    link: "/template/youtubesubs",
+    durationInFrames: 120
+  },
+  {
+    title: "Logo Animation 2",
+    component: LogoAnimation2,
+    inputProps: {
+      title: "My Company",
+      image: "/images/logov.png"
+    },
+    link: "/template/logoanimation2",
+    durationInFrames: 120
+  },
+  {
+    title: "Chat Animation",
+    component: ChatAnimation,
+    inputProps: {
+      title: "Beli makanan yuk, apa ya yang enak",
+      suffix: "Kopi aja gak sih pengen yang seger - seger",
+      prefix: "ywdh sekalian aja coba cek grabfood",
+      desc: "sip sip wait"
+    },
+    link: "/template/chat",
+    durationInFrames: 150
   }
 ]

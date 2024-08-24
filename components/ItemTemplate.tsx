@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation"
 import { signIn, useSession, getProviders } from 'next-auth/react'
 import { useState, useEffect } from 'react'
 
-const ItemTemplate = ({ key, title, component, inputProps, link }: ItemTemplateProps) => {
+const ItemTemplate = ({ key, title, component, inputProps, link, durationInFrames }: ItemTemplateProps) => {
 
     const router = useRouter()
     const { data: session } = useSession();
@@ -29,7 +29,7 @@ const ItemTemplate = ({ key, title, component, inputProps, link }: ItemTemplateP
                   className=" mx-auto"
                   component={component}
                   inputProps={inputProps}
-                  durationInFrames={120}
+                  durationInFrames={durationInFrames}
                   fps={30}
                   compositionHeight={720}
                   compositionWidth={1280}
