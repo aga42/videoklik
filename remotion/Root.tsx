@@ -13,6 +13,8 @@ import IOSNotif from "./MyComp/IOSNotif";
 import InstagramAccount from "./MyComp/InstagramAccount";
 import TweetPanel from "./MyComp/TweetPanel";
 import LogoAnimation from "./MyComp/LogoAnimation";
+import TiktokComment from "./MyComp/TiktokComment";
+import YoutubeSubs from "./MyComp/YoutubeSubs";
 
 export const RemotionRoot: React.FC = () => {
 
@@ -126,6 +128,40 @@ export const RemotionRoot: React.FC = () => {
           prefix: defaultTweetProps.prefix,
           duration: defaultTweetProps.duration,
           desc: "Best culture from future",
+          image: defaultTweetProps.image
+        }}
+      />
+      <Composition
+        id="TiktokComment"
+        component={TiktokComment}
+        durationInFrames={120}
+        fps={30}
+        width={1280}
+        height={720}
+        schema={CompositionProps}
+        defaultProps={{
+          title: "Alexander Gophler",
+          suffix: defaultTweetProps.suffix,
+          prefix: defaultTweetProps.prefix,
+          duration: defaultTweetProps.duration,
+          desc: "Why people always want to own thing that they cannot afford",
+          image: defaultTweetProps.image
+        }}
+      />
+      <Composition
+        id="YoutubeSubs"
+        component={YoutubeSubs}
+        durationInFrames={120}
+        fps={30}
+        width={1280}
+        height={720}
+        schema={CompositionProps}
+        defaultProps={{
+          title: "Makan Jajan Channel",
+          suffix: defaultTweetProps.suffix,
+          prefix: defaultTweetProps.prefix,
+          duration: defaultTweetProps.duration,
+          desc: "11.8k subscribers",
           image: defaultTweetProps.image
         }}
       />

@@ -12,6 +12,8 @@ import LogoAnimation from "../remotion/MyComp/LogoAnimation";
 import { ListTemplateProps } from "../types";
 import TemplatePagination from "./TemplatePagination";
 import { useState } from "react";
+import TiktokComment from "../remotion/MyComp/TiktokComment";
+import YoutubeSubs from "../remotion/MyComp/YoutubeSubs";
 
 const ListTemplate = ({ isLandingPage }: ListTemplateProps) => {
 
@@ -73,6 +75,26 @@ const ListTemplate = ({ isLandingPage }: ListTemplateProps) => {
         image: ""
       },
       link: "/template/tweetpanel"
+    },
+    {
+      title: "Tiktok Comment",
+      component: TiktokComment,
+      inputProps: {
+        title: "Keanu Reeves",
+        desc: "I like the shoes that I buy before in England 1999",
+        image: ""
+      },
+      link: "/template/tiktokcomment"
+    },
+    {
+      title: "Youtube Subscribe",
+      component: YoutubeSubs,
+      inputProps: {
+        title: "Makan Jajan Channel",
+        desc: "11.8k subscribers",
+        image: ""
+      },
+      link: "/template/youtubesubs"
     }
   ]
 
