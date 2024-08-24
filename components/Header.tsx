@@ -18,6 +18,7 @@ const Header = ({ actionLabel }: HeaderProps) => {
         setUpProviders();
       }, [])
 
+    const labelTemplate = "Template"
     const labelAsset = "Assets"
     const labelPricelist = "Pricing"
     const labelTentang = "About Creator"
@@ -25,6 +26,7 @@ const Header = ({ actionLabel }: HeaderProps) => {
     const [state, setState] = useState(false)
 
     const navigation = [
+        { title: labelTemplate, path: "/template" },
         { title: labelAsset, path: "https://bit.ly/asset-video-aga" },
         { title: labelPricelist, path: "/pricing" },
         { title: labelTentang, path: "/creator?index=1" }

@@ -14,7 +14,7 @@ import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import { UploadButton } from "../../utils/uploadthing";
 
-export const RenderControlsLogoAnimation: React.FC<{
+export const RenderControlsTiktokComment: React.FC<{
 
   text: string;
   setText: React.Dispatch<React.SetStateAction<string>>;
@@ -89,21 +89,21 @@ export const RenderControlsLogoAnimation: React.FC<{
             disabled={state.status === "invoking"}
             setText={setText}
             text={text}
-            placeholder="Company Name (max 10 char)"
+            placeholder="Fullname"
             type="text"
-            maxLength={10}
+            maxLength={24}
           ></Input>
-          <div className="my-4">
+          <div className=" my-4">
             <Input
               disabled={state.status === "invoking"}
               setText={setDesc}
               text={desc}
-              placeholder="Tagline (max 30 char)"
+              placeholder="Message"
               type="text"
-              maxLength={30}
+              maxLength={48}
             ></Input>
           </div>
-          <div className="w-full">
+          <div className="w-fit mt-4">
             <UploadButton
               endpoint="imageUploader"
               onClientUploadComplete={(res) => {
