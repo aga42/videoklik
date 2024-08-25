@@ -2,6 +2,7 @@ import "../styles/global.css";
 import { Metadata } from "next";
 import { Suspense } from 'react'
 import Provider from "../components/Provider";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Videoklik",
@@ -26,7 +27,9 @@ export default function RootLayout({
           <Suspense fallback={<div>Loading...</div>}>
             {children}
           </Suspense>
-            
+          <Script
+            src="../tawkto.js"
+          ></Script>
           </body>
         </html>
     </Provider>

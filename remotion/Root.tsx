@@ -10,13 +10,15 @@ import { NextLogo } from "./MyComp/NextLogo";
 import Main from "./MyComp/Main";
 import Searchbar from "./MyComp/Searchbar";
 import IOSNotif from "./MyComp/IOSNotif";
-import InstagramAccount from "./MyComp/InstagramAccount";
+import { InstagramSnippet } from "./MyComp/InstagramSnippet";
 import TweetPanel from "./MyComp/TweetPanel";
 import LogoAnimation from "./MyComp/LogoAnimation";
 import TiktokComment from "./MyComp/TiktokComment";
 import YoutubeSubs from "./MyComp/YoutubeSubs";
 import LogoAnimation2 from "./MyComp/LogoAnimation2";
 import ChatAnimation from "./MyComp/ChatAnimation";
+import InstagramSnippetLight from "./MyComp/InstagramSnippetLight";
+import YoutubeSubsLight from "./MyComp/YoutubeSubsLight";
 
 export const RemotionRoot: React.FC = () => {
 
@@ -83,8 +85,8 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
       <Composition
-        id="InstagramAccount"
-        component={InstagramAccount}
+        id="InstagramSnippet"
+        component={InstagramSnippet}
         durationInFrames={90}
         fps={30}
         width={1280}
@@ -198,6 +200,40 @@ export const RemotionRoot: React.FC = () => {
           prefix: "ywdh sekalian aja coba cek grabfood ada diskon gak",
           duration: defaultTweetProps.duration,
           desc: "sip sip wait",
+          image: defaultTweetProps.image
+        }}
+      />
+      <Composition
+        id="InstagramSnippetLight"
+        component={InstagramSnippetLight}
+        durationInFrames={90}
+        fps={30}
+        width={1280}
+        height={720}
+        schema={CompositionProps}
+        defaultProps={{
+          title: defaultSearchbarProps.title,
+          suffix: defaultMyCompProps.suffix,
+          prefix: defaultMyCompProps.prefix,
+          duration: defaultMyCompProps.duration,
+          desc: defaultMyCompProps.desc,
+          image: defaultMyCompProps.image
+        }}
+      />
+      <Composition
+        id="YoutubeSubsLight"
+        component={YoutubeSubsLight}
+        durationInFrames={120}
+        fps={30}
+        width={1280}
+        height={720}
+        schema={CompositionProps}
+        defaultProps={{
+          title: "Makan Jajan Channel",
+          suffix: defaultTweetProps.suffix,
+          prefix: defaultTweetProps.prefix,
+          duration: defaultTweetProps.duration,
+          desc: "11.8k subscribers",
           image: defaultTweetProps.image
         }}
       />

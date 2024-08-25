@@ -9,9 +9,9 @@ import {
 import { z } from "zod";
 import Header from "../../../components/Header";
 import { RenderControlsIGSnippet } from "../../../components/rendercontrols/RenderControlsIGSnippet";
-import InstagramSnippet from "../../../remotion/MyComp/InstagramSnippet";
+import InstagramSnippetLight from "../../../remotion/MyComp/InstagramSnippetLight";
 
-const IGSnippetpage: NextPage = () => {
+const IGSnippetLightpage: NextPage = () => {
   
   const [text, setText] = useState<string>("@Petshop.official");
 
@@ -33,7 +33,7 @@ const IGSnippetpage: NextPage = () => {
           <div className="sm:mx-44 sm:mb-16 pt-8 sm:pt-16">
             <Player
                   className=" mx-auto sm:mx-0 sm:left-1/2"
-                  component={InstagramSnippet}
+                  component={InstagramSnippetLight}
                   inputProps={inputProps}
                   durationInFrames={ 120}
                   fps={30}
@@ -56,7 +56,7 @@ const IGSnippetpage: NextPage = () => {
                 text={text}
                 setText={setText}
                 inputProps={inputProps}
-                compositionName="InstagramSnippet"
+                compositionName="InstagramSnippetLight"
               ></RenderControlsIGSnippet>
             </div>
             
@@ -66,4 +66,4 @@ const IGSnippetpage: NextPage = () => {
   );
 };
 
-export default IGSnippetpage;
+export default IGSnippetLightpage;

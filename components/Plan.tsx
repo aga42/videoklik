@@ -220,7 +220,7 @@ const Plan = () => {
                                 }
                 <div className="p-8 space-y-4 border-b">
                   <span className={idx === 2 ? 'text-fuchsia-600 font-medium' : 'text-gray-500 font-medium'}>
-                    {idx === 2 ? `${item.name} (58% OFF)` : item.name}
+                    {idx === 2 ? `${item.name} (52% OFF)` : item.name}
                   </span>
                   <div className='text-gray-800 text-3xl font-semibold'>
                     {idx === 0 ? "FREE" : `Rp. ${item.price}.000`}

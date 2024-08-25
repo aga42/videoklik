@@ -1,7 +1,7 @@
 import Main from "../remotion/MyComp/Main";
 import Searchbar from "../remotion/MyComp/Searchbar";
 import IOSNotif from "../remotion/MyComp/IOSNotif";
-import InstagramAccount from "../remotion/MyComp/InstagramAccount";
+import { InstagramSnippet } from "../remotion/MyComp/InstagramSnippet";
 import LogoAnimation from "../remotion/MyComp/LogoAnimation";
 import TweetPanel from "../remotion/MyComp/TweetPanel";
 import TiktokComment from "../remotion/MyComp/TiktokComment";
@@ -9,6 +9,8 @@ import YoutubeSubs from "../remotion/MyComp/YoutubeSubs";
 import { defaultMyCompProps, defaultSearchbarProps } from "./constants";
 import LogoAnimation2 from "../remotion/MyComp/LogoAnimation2";
 import ChatAnimation from "../remotion/MyComp/ChatAnimation";
+import InstagramSnippetLight from "../remotion/MyComp/InstagramSnippetLight";
+import YoutubeSubsLight from "../remotion/MyComp/YoutubeSubsLight";
 
 export const dataTemplate = [
   {
@@ -45,7 +47,7 @@ export const dataTemplate = [
   },
   {
     title: "IG Snippet",
-    component: InstagramAccount,
+    component: InstagramSnippet,
     inputProps: {
       title: "@Petshop.official"
     },
@@ -118,5 +120,25 @@ export const dataTemplate = [
     },
     link: "/template/chat",
     durationInFrames: 150
+  },
+  {
+    title: "IG Snippet White",
+    component: InstagramSnippetLight,
+    inputProps: {
+      title: "@Petshop.official"
+    },
+    link: "/template/igsnippetlight",
+    durationInFrames: 120
+  },
+  {
+    title: "Youtube Subscribe White",
+    component: YoutubeSubsLight,
+    inputProps: {
+      title: "Makan Jajan Channel",
+      desc: "11.8k subscribers",
+      image: ""
+    },
+    link: "/template/youtubesubslight",
+    durationInFrames: 120
   }
 ]

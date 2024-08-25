@@ -14,10 +14,16 @@ const ListTemplate = ({ isLandingPage }: ListTemplateProps) => {
   const size = 4
 
   const [page, setPage] = useState(1)
+
+  const scrollToTop = () => {
+      let isBrowser = () => typeof window !== 'undefined';
+      if (!isBrowser()) return;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
       
   const showPagination = () => {
     if(!isLandingPage){
-      return <TemplatePagination page={data.length / size} setPage={setPage} choose={page}></TemplatePagination>
+      return <TemplatePagination page={data.length / size} setPage={setPage} choose={page} scrollToTop={scrollToTop}></TemplatePagination>
     }
   }
 
@@ -30,8 +36,6 @@ const ListTemplate = ({ isLandingPage }: ListTemplateProps) => {
     : (page * size)
 
     var dataPage = data.slice(startIndex, endIndex)
-
-    console.log(`${startIndex} dan ${endIndex}`)
 
     return dataPage
     

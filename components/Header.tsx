@@ -22,6 +22,7 @@ const Header = ({ actionLabel }: HeaderProps) => {
     const labelAsset = "Assets"
     const labelPricelist = "Pricing"
     const labelTentang = "About Creator"
+    // const labelFaq = "FAQ"
 
     const [state, setState] = useState(false)
 
@@ -30,6 +31,7 @@ const Header = ({ actionLabel }: HeaderProps) => {
         { title: labelAsset, path: "https://bit.ly/asset-video-aga" },
         { title: labelPricelist, path: "/pricing" },
         { title: labelTentang, path: "/creator?index=1" }
+        // { title: labelFaq, path: "/faq" }
     ]
 
     const checkSoon = (title: String) => {

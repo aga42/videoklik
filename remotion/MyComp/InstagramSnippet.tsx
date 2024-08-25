@@ -5,7 +5,7 @@ import { CompositionProps } from "../../types/constants";
 import { z } from "zod";
 import InstagramBox from "../../components/InstagramBox";
  
-export const InstagramAccount = ({ title }: z.infer<typeof CompositionProps>) => {
+export const InstagramSnippet = ({ title }: z.infer<typeof CompositionProps>) => {
  
   return (
     <div>
@@ -18,11 +18,11 @@ export const InstagramAccount = ({ title }: z.infer<typeof CompositionProps>) =>
     >
       
       <Sequence className=" mt-80">
-        <InstagramBox title={title} colorBg="bg-gray-900" colorText="text-white" colorLogo="#ffffff"></InstagramBox>
+        <InstagramBox title={title} colorBg="bg-gray-900" colorText="text-white"></InstagramBox>
       </Sequence>
     </AbsoluteFill>
     </div>
   );
 };
 
-export default InstagramAccount
+export default InstagramSnippet

@@ -8,12 +8,14 @@ import {
 } from "../../../types/constants";
 import { z } from "zod";
 import Header from "../../../components/Header";
-import { RenderControlsIGSnippet } from "../../../components/rendercontrols/RenderControlsIGSnippet";
-import InstagramSnippet from "../../../remotion/MyComp/InstagramSnippet";
+import { RenderControlsYoutubeSubs } from "../../../components/rendercontrols/RenderControlsYoutubeSubs";
+import YoutubeSubsLight from "../../../remotion/MyComp/YoutubeSubsLight";
 
-const IGSnippetpage: NextPage = () => {
+const YoutubeSubsLightpage: NextPage = () => {
   
-  const [text, setText] = useState<string>("@Petshop.official");
+  const [text, setText] = useState<string>("Keanu Reeves");
+  const [desc, setDesc] = useState<string>("I like the shoes that I buy before in England 1999");
+  const [image, setImage] = useState<string>("");
 
   const inputProps: z.infer<typeof CompositionProps> = useMemo(() => {
     return {
@@ -21,10 +23,10 @@ const IGSnippetpage: NextPage = () => {
       prefix: "",
       suffix: "",
       duration: "",
-      desc: "",
-      image: ""
+      desc: desc,
+      image: image
     };
-  }, [text]);
+  }, [text, desc, image]);
 
   return (
     <main className="flex min-h-screen flex-col bg-white">
@@ -33,7 +35,7 @@ const IGSnippetpage: NextPage = () => {
           <div className="sm:mx-44 sm:mb-16 pt-8 sm:pt-16">
             <Player
                   className=" mx-auto sm:mx-0 sm:left-1/2"
-                  component={InstagramSnippet}
+                  component={YoutubeSubsLight}
                   inputProps={inputProps}
                   durationInFrames={ 120}
                   fps={30}
@@ -52,12 +54,16 @@ const IGSnippetpage: NextPage = () => {
           
           <div className="mt-8 sm:mt-16 sm:mb-0 mb-8">
             <div className="sm:w-1/3 max-w-max sm:max-w-full mx-auto sm:mx-0 sm:left-1/2 sm:ml-44">
-              <RenderControlsIGSnippet
+              <RenderControlsYoutubeSubs
                 text={text}
                 setText={setText}
+                desc={desc}
+                setDesc={setDesc}
+                image={image}
+                setImage={setImage}
                 inputProps={inputProps}
-                compositionName="InstagramSnippet"
-              ></RenderControlsIGSnippet>
+                compositionName="YoutubeSubsLight"
+              ></RenderControlsYoutubeSubs>
             </div>
             
           </div>
@@ -66,4 +72,4 @@ const IGSnippetpage: NextPage = () => {
   );
 };
 
-export default IGSnippetpage;
+export default YoutubeSubsLightpage;

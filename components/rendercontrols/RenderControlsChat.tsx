@@ -92,7 +92,7 @@ export const RenderControlsChat: React.FC<{
             text={msg1}
             placeholder="Fullname"
             type="text"
-            maxLength={24}
+            maxLength={32}
           ></Input>
           <div className=" my-4">
             <Input
@@ -101,17 +101,17 @@ export const RenderControlsChat: React.FC<{
               text={msg2}
               placeholder="Message 2"
               type="text"
-              maxLength={24}
+              maxLength={48}
             ></Input>
           </div>
           <div>
             <Input
               disabled={state.status === "invoking"}
-              setText={setMsg2}
+              setText={setMsg3}
               text={msg3}
               placeholder="Message 3"
               type="text"
-              maxLength={24}
+              maxLength={32}
             ></Input>
           </div>
           <div className=" my-4">
@@ -121,7 +121,7 @@ export const RenderControlsChat: React.FC<{
               text={msg4}
               placeholder="Message 4"
               type="text"
-              maxLength={24}
+              maxLength={32}
             ></Input>
           </div>
           

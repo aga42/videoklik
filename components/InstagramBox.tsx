@@ -1,6 +1,6 @@
 import {Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
  
-const InstagramBox: React.FC<{colorBg: string, colorText: string, colorLogo: string, title: string}> = ({colorBg, colorText, colorLogo, title}) => {
+const InstagramBox: React.FC<{colorBg: string, colorText: string, title: string}> = ({colorBg, colorText, title}) => {
   const frame = useCurrentFrame();
   const opacity = interpolate(frame, [0, 20], [0, 1], {
     extrapolateRight: 'clamp',
