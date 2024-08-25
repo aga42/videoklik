@@ -103,7 +103,7 @@ export const RenderControlsYoutubeSubs: React.FC<{
               maxLength={20}
             ></Input>
           </div>
-          <div className="w-fit mt-4">
+          <div className="w-fit grid grid-cols-2 sm:ml-2">
             <UploadButton
               endpoint="imageUploader"
               onClientUploadComplete={(res) => {
@@ -116,6 +116,7 @@ export const RenderControlsYoutubeSubs: React.FC<{
                 alert(`ERROR! ${error.message}`);
               }}
             />
+            <p className="text-gray-900 text-sm ml-4 my-auto">{image === "" ? "" : image.substring(image.length - 8, image.length)}</p>
           </div>
           
           <Spacing></Spacing>

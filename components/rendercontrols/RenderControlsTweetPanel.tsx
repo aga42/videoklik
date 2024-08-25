@@ -115,7 +115,7 @@ export const RenderControlsTweetPanel: React.FC<{
               maxLength={48}
             ></Input>
           </div>
-          <div className="w-fit mt-4">
+          <div className="w-fit grid grid-cols-2 mt-4 sm:ml-2">
             <UploadButton
               endpoint="imageUploader"
               onClientUploadComplete={(res) => {
@@ -128,6 +128,7 @@ export const RenderControlsTweetPanel: React.FC<{
                 alert(`ERROR! ${error.message}`);
               }}
             />
+            <p className="text-gray-900 text-sm ml-4 my-auto">{image === "" ? "" : image.substring(image.length - 8, image.length)}</p>
           </div>
           
           <Spacing></Spacing>

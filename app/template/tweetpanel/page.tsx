@@ -53,7 +53,7 @@ const TweetPanelpage: NextPage = () => {
                 />
           </div>
           
-          <div className="mt-8 sm:mt-16 sm:mb-0 mb-8">
+          <div className="mt-8 sm:mt-16 sm:mb-0 mb-16">
             <div className="sm:w-1/3 max-w-max sm:max-w-full mx-auto sm:mx-0 sm:left-1/2 sm:ml-44">
               <RenderControlsTweetPanel
                 text={text}

@@ -91,7 +91,7 @@ export const RenderControlsLogoAnimation2: React.FC<{
             type="text"
             maxLength={10}
           ></Input>
-          <div className="w-full mt-4">
+          <div className="w-fit grid grid-cols-2 mt-4 sm:ml-2">
             <UploadButton
               endpoint="imageUploader"
               onClientUploadComplete={(res) => {
@@ -104,6 +104,7 @@ export const RenderControlsLogoAnimation2: React.FC<{
                 alert(`ERROR! ${error.message}`);
               }}
             />
+            <p className="text-gray-900 text-sm ml-4 my-auto">{image === "" ? "" : image.substring(image.length - 8, image.length)}</p>
           </div>
           
           <Spacing></Spacing>

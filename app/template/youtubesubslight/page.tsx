@@ -13,8 +13,8 @@ import YoutubeSubsLight from "../../../remotion/MyComp/YoutubeSubsLight";
 
 const YoutubeSubsLightpage: NextPage = () => {
   
-  const [text, setText] = useState<string>("Keanu Reeves");
-  const [desc, setDesc] = useState<string>("I like the shoes that I buy before in England 1999");
+  const [text, setText] = useState<string>("New York Travel Channel");
+  const [desc, setDesc] = useState<string>("41.8k subscribers");
   const [image, setImage] = useState<string>("");
 
   const inputProps: z.infer<typeof CompositionProps> = useMemo(() => {
@@ -52,7 +52,7 @@ const YoutubeSubsLightpage: NextPage = () => {
                 />
           </div>
           
-          <div className="mt-8 sm:mt-16 sm:mb-0 mb-8">
+          <div className="mt-8 sm:mt-16 sm:mb-0 mb-16">
             <div className="sm:w-1/3 max-w-max sm:max-w-full mx-auto sm:mx-0 sm:left-1/2 sm:ml-44">
               <RenderControlsYoutubeSubs
                 text={text}
