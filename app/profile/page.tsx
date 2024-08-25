@@ -26,7 +26,6 @@ const Profile: NextPage = () => {
     e.preventDefault();
     setSubmitting(true);
     try {
-      console.log(`saving ${cookiesUserId}`)
       const response = await fetch(`api/profile/${cookiesUserId}`, {
         method: "PATCH",
         body: JSON.stringify({
@@ -152,7 +151,7 @@ const Profile: NextPage = () => {
         </div>
         </div>
         <div className=" flex py-6 bg-gray-50 justify-center">
-          <p>Want to sign in into another videoklik's account? <a className="text-fuchsia-600 cursor-pointer" onClick={() => {
+          <p>Want to sign in into another videoklik&#39;s account? <a className="text-fuchsia-600 cursor-pointer" onClick={() => {
                           signOut({ callbackUrl: '/' })
                           Cookies.remove('user_id')
                           Cookies.remove('name')
