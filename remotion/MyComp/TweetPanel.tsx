@@ -4,7 +4,7 @@ import { AbsoluteFill } from "remotion";
 import { CompositionProps } from "../../types/constants";
 import { z } from "zod";
 import TweetBox from "../../components/TweetBox";
-import { Animated, Fade, Move, Scale } from "remotion-animated";
+import { Animated } from "remotion-animated";
 import { moveTextRightIn, scaleIn } from "../../types/animation";
  
 export const TweetPanel = ({ title, prefix, desc, image }: z.infer<typeof CompositionProps>) => {
