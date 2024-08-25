@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { HeaderProps } from '../types';
 import { signIn, useSession, getProviders } from 'next-auth/react'
+import Image from 'next/image';
 
 const Header = ({ actionLabel }: HeaderProps) => {
     const { data: session } = useSession();
@@ -47,7 +48,7 @@ const Header = ({ actionLabel }: HeaderProps) => {
                 <nav className="items-center pt-5 px-4 mx-auto max-w-screen-xl sm:px-8 md:flex md:space-x-6 bg-white pb-5">
                     <div className="flex justify-between">
                         <a href="/">
-                            <img
+                            <Image
                                 src="/images/logo-videoklik.png" 
                                 width={180} 
                                 height={50}

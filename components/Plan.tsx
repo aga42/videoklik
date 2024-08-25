@@ -268,7 +268,7 @@ const Plan = () => {
                     {idx === 2 ? <p>GET DEALS NOW</p> : <p className="text-gray-500">GET STARTED</p>}
                   </motion.button>
                   {idx === 0 && freeDesc ?
-                    <><p>When you have a videoklik's account. Free package is added to your account automatically.<a href="/profile" className="text-fuchsia-600"> Check My Profile</a></p></>
+                    <><p>When you have a videoklik&#39;s account. Free package is added to your account automatically.<a href="/profile" className="text-fuchsia-600"> Check My Profile</a></p></>
                     :
                     <></>
                   }
