@@ -15,7 +15,7 @@ const Creator = () => {
     }
 
     const pilihanIndexBahasa = [0, 1]
-    const [indexBahasa, setIndexBahasa] = useState(pilihanIndexBahasa[index])
+    const [indexBahasa] = useState(pilihanIndexBahasa[index])
 
     const showDesc = () => {
         if(indexBahasa == 0){
