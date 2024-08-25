@@ -20,23 +20,20 @@ const Creator = () => {
     const showDesc = () => {
         if(indexBahasa == 0){
             return (
-                <p className=' text-justify text-base text-gray-500 items-center mt-10 md:mx-64 lg:mx-96 mx-10 justify-center mb-20'>Hi, gw Aga Ariesta (32 tahun). Di beberapa konten video gw yang membahas finansial, sering banget membutuhkan elemen animasi uang dengan range tertentu. Nah karena sudah berulang kali membutuhkan elemen tersebut dan pembuatannya di aplikasi video editing memakan waktu. Akhirnya gw memutuskan untuk membuat video generator animasi tersebut seperti yang ada di dalam website <b>Videoklik</b> ini. Dan jika kedepannya gw mengalami kesulitan-kesulitan lainnya atau bahkan jika kamu punya kesulitan atau kebutuhan supaya proses pembuatan konten video jadi lebih mudah. Bisa banget untuk memberikan gw saran dan masukan untuk dijadikan fitur <b>Videoklik</b> berikutnya</p>
+                <p className=' text-justify text-base text-gray-500 items-center mt-10 md:mx-64 lg:mx-96 mx-10 justify-center mb-20'>Hi, gw Aga Ariesta (32 tahun). Di beberapa konten video gw yang membahas finansial, sering banget membutuhkan elemen animasi uang dengan range tertentu. Nah karena sudah berulang kali membutuhkan elemen tersebut dan pembuatannya di aplikasi video editing memakan waktu. Akhirnya gw memutuskan untuk membuat website <b>Videoklik</b> sebagai online tools generator video animasi tersebut. Dan jika kedepannya gw mengalami kesulitan-kesulitan lainnya atau bahkan jika kamu punya kesulitan atau kebutuhan supaya proses pembuatan konten video jadi lebih mudah. Bisa banget untuk memberikan gw saran dan masukan untuk dijadikan fitur <b>Videoklik</b> berikutnya</p>
             )
         }else {
             return (
-                <p className=' text-justify text-base text-gray-500 items-center mt-10 md:mx-64 lg:mx-96 mx-10 justify-center mb-20'>Hi, I&#39;m Aga Ariesta 32 yo. Most of the time in my video content production hobbies. I need several animation element like value counter animation etc. And because to produce that animation in video editor seems wasting time. I create this website called <b>Videoklik</b> to generate value counter animation element. If you have same difficulties, please don&#39;t hestitate to use this website and give me next ideas about what kind of feature that need to develop in this project.</p>
+                <p className=' text-justify text-base text-gray-500 items-center mt-10 md:mx-64 lg:mx-96 mx-10 justify-center mb-20'>Hi, I&#39;m Aga Ariesta 32 yo. Most of the time in my video content production hobbies. I need several animation element like value counter animation etc. And because to produce that animation in video editor seems wasting time. I create this website called <b>Videoklik</b> to generate all of those video&#39;s element.<br></br>If you have same difficulties, please don&#39;t hestitate to use this website and give me next ideas about what kind of video element that you need and I&#39;ve to provide in this site.</p>
             )
         }
     }
 
     return (
         <div>
-            
                 <div className="flex min-h-screen flex-col bg-white">
                     {/* <Suspense fallback={<div>Loading...</div>}> */}
-                        <Header index={indexBahasa} actionIndex={(index: number)=>{
-                            setIndexBahasa(index)
-                        }}/>
+                        <Header actionLabel='TRY FOR FREE'></Header>
                     {/* </Suspense> */}
                     <div className=' content-center justify-center self-center mt-28 '>
                         <Image src="/images/img_aga.png" width={200} height={200} alt="Picture of creator" className='rounded-full'/>

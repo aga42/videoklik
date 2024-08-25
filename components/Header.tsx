@@ -1,44 +1,50 @@
 "use client";
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { HeaderProps } from '../types';
+import { signIn, useSession, getProviders } from 'next-auth/react'
 
-const Header = ({index, actionIndex}: HeaderProps) => {
+const Header = ({ actionLabel }: HeaderProps) => {
+    const { data: session } = useSession();
 
-    //Bahasa part
-    // const pilihanBahasa = ["Bahasa Indonesia", "English Language"]
-    // const [bahasa, setBahasa] = useState(pilihanBahasa[index])
+    const [providers, setProviders] = useState(null);
+    useEffect(() => {
+        const setUpProviders = async () => {
+          const response: any = await getProviders();
+    
+          setProviders(response);
+        }
+    
+        setUpProviders();
+      }, [])
 
-    const labelAsset = ["Assets Editing", "Assets Editing"]
-    const labelTentang = ["Tentang Pengembang", "About Creator"]
-
-    // const labelSegera = ["segera", "soon"]
-
-    // const pilihanIndexBahasa = [0, 1]
-    // const [indexBahasa, setIndexBahasa] = useState(index)
-    //End of Bahasa part
+    const labelTemplate = "Template"
+    const labelAsset = "Assets"
+    const labelPricelist = "Pricing"
+    const labelTentang = "About Creator"
+    // const labelFaq = "FAQ"
 
     const [state, setState] = useState(false)
 
     const navigation = [
-        // { title: labelAsset[indexBahasa], path: "https://bit.ly/asset-video-aga" },
-        // { title: labelTentang[indexBahasa], path: "/creator?index="+indexBahasa }
-        { title: labelAsset[index], path: "https://bit.ly/asset-video-aga" },
-        { title: labelTentang[index], path: "/creator?index="+index }
+        { title: labelTemplate, path: "/template" },
+        { title: labelAsset, path: "https://bit.ly/asset-video-aga" },
+        { title: labelPricelist, path: "/pricing" },
+        { title: labelTentang, path: "/creator?index=1" }
+        // { title: labelFaq, path: "/faq" }
     ]
 
     const checkSoon = (title: String) => {
-        // if(title == labelAsset[indexBahasa] || title == "Hadist"){
-        //     return <p className=' text-indigo-600 text-xs ml-1'>{labelSegera[indexBahasa]}</p>
-        // }else{
-        //     return <></>
-        // }
-        return <></>
+        if(title == "Assets"){
+            return <p className=' text-fuchsia-500 text-xs ml-1'>Free</p>
+        }else{
+            return <></>
+        }
     }
 
     return (
         <header>
-                <nav className="items-center pt-5 px-4 mx-auto max-w-screen-xl sm:px-8 md:flex md:space-x-6">
+                <nav className="items-center pt-5 px-4 mx-auto max-w-screen-xl sm:px-8 md:flex md:space-x-6 bg-white pb-5">
                     <div className="flex justify-between">
                         <a href="/">
                             <img
@@ -66,60 +72,42 @@ const Header = ({index, actionIndex}: HeaderProps) => {
                         </button>
                     </div>
                     <ul className={`flex-1 justify-between mt-12 md:flex md:mt-0 ${state ? '' : 'hidden'}`}>
-                        {/* <li className="order-2 pb-5 md:pb-0">
-                            <div className="flex items-center justify-center mt-6" data-twe-dropdown-ref>
-                                <button
-                                    className="flex items-center whitespace-nowrap rounded bg-fuchsia-600 px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-fuchsia-700 hover:shadow-primary-2 focus:bg-fuchsia-700 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-fuchsia-700 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
-                                    type="button"
-                                    id="dropdownMenuLargeButton"
-                                    data-twe-dropdown-toggle-ref
-                                    aria-expanded="false"
-                                    data-twe-ripple-init
-                                    data-twe-ripple-color="light">
-                                    {bahasa}
-                                    <span className="ms-2 w-2 [&>svg]:h-5 [&>svg]:w-5">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 20 20"
-                                        fill="currentColor">
-                                        <path
-                                        fill-rule="evenodd"
-                                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                                        clip-rule="evenodd" />
-                                    </svg>
-                                    </span>
-                                </button>
-                                <ul
-                                    className="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-base shadow-lg data-[twe-dropdown-show]:block dark:bg-surface-dark"
-                                    aria-labelledby="dropdownMenuLargeButton"
-                                    data-twe-dropdown-menu-ref>
-                                        {pilihanBahasa.map((data: any, idx) =>
-                                            <li key={idx}>
-                                            <a
-                                                className="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25"
-                                                href="#"
-                                                data-twe-dropdown-item-ref
-                                                onClick={() => {
-                                                    if(data == pilihanBahasa[0]){
-                                                        setIndexBahasa(pilihanIndexBahasa[0])
-                                                        actionIndex(0)
-                                                    }else{
-                                                        setIndexBahasa(pilihanIndexBahasa[1])
-                                                        actionIndex(1)
-                                                    }
-                                                    setBahasa(data)
-                                                }}
-                                                >{data}</a
+                        <li className="order-2 pb-5 md:pb-0">
+                            <div className="flex items-center justify-center mt-6">
+                                {session?.user ? 
+                                    <a
+                                        className="flex items-center whitespace-nowrap rounded border border-gray-200 bg-gray-50 px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-gray-500 shadow-primary-3 transition duration-150 ease-in-out hover:bg-gray-100 hover:shadow-primary-2 focus:bg-gray-100 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-gray-100 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+                                        href='/profile'
+                                        >
+                                        My Profile
+                                    </a>
+                                    :
+                                    <>
+                                    {providers && Object.values(providers).map((provider: any) => (
+                                        // <button
+                                        //     className="flex items-center whitespace-nowrap rounded bg-fuchsia-600 px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-fuchsia-700 hover:shadow-primary-2 focus:bg-fuchsia-700 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-fuchsia-700 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+                                        //     type="button"
+                                        //     key={provider.name}
+                                        //     onClick={() => signIn(provider.id)}
+                                        //     >
+                                        //     {actionLabel}
+                                        // </button>
+                                        <a
+                                            className="flex items-center cursor-pointer whitespace-nowrap rounded border border-gray-200 bg-gray-50 px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-gray-500 shadow-primary-3 transition duration-150 ease-in-out hover:bg-gray-100 hover:shadow-primary-2 focus:bg-gray-100 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-gray-100 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+                                            key={provider.name}
+                                            onClick={() => signIn(provider.id)}
                                             >
-                                            </li>
-                                        )}
-                                </ul>
+                                            Sign in
+                                        </a>
+                                            ))}
+                                    </>
+                                }
                             </div>
-                        </li> */}
+                        </li>
                         <div className="order-1 flex-1 justify-center items-center space-y-5 md:flex md:space-x-6 md:space-y-0">
                             {
                                 navigation.map((item, idx) => (
-                                    <li className="text-gray-500 hover:text-indigo-600 flex" key={idx}>
+                                    <li className="text-gray-500 hover:text-fuchsia-600 flex text-base sm:text-2xl" key={idx}>
                                         <a href={item.path} target="_blank">{item.title}</a>
                                         {checkSoon(item.title)}
                                     </li>

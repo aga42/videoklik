@@ -29,6 +29,7 @@ export const POST = executeApi<RenderMediaOnLambdaOutput, typeof RenderRequest>(
 
     const result = await renderMediaOnLambda({
       codec: "h264",
+      // codec: body.inputProps.codec === "h264" ? "h264" : "prores",
       functionName: speculateFunctionName({
         diskSizeInMb: DISK,
         memorySizeInMb: RAM,
@@ -38,13 +39,15 @@ export const POST = executeApi<RenderMediaOnLambdaOutput, typeof RenderRequest>(
       serveUrl: SITE_NAME,
       composition: body.id,
       inputProps: body.inputProps,
-      // framesPerLambda: 4,
       framesPerLambda: 30,
       downloadBehavior: {
         type: "download",
         fileName: "video.mp4",
+        // fileName: `video${body.inputProps.video_ext}`,
       },
     });
+
+    console.log(body.inputProps)
 
     return result;
   },

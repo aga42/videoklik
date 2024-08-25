@@ -1,38 +1,44 @@
+import { Session } from "next-auth"
 import { MouseEventHandler } from "react"
 
-
-export interface QuranListProps{
-    kategori: string
-    indexBahasa: number
-}
-
-export interface QuranItemListProps{
-    data: any
+export interface ItemTemplateProps{
     key: any
-    arabic: string
-    arti: string
-    surat: string
-    kategori: string
-}
-
-export interface ChooseAnswerProps{
-    chooseAnswerClick?: MouseEventHandler<HTMLButtonElement>
-}
-
-export interface NavTitleProps{
     title: string
+    component: any
+    inputProps: any
+    link: string
+    durationInFrames: number
 }
 
 export interface HeaderProps{
-    index: number
-    actionIndex: Function
+    actionLabel: string
 }
 
-export interface HeroProps{
-    index: number
-    firstLoad: boolean
+export interface ProviderProps{
+    children: any,
+    session?: Session
 }
 
-export interface CreatorProps{
-    index: number
+export interface SubmitButtonProps{
+    title: string
+    containerStyles?: string
+    handleClick?: MouseEventHandler<HTMLButtonElement>
+    btnType?: 'button' | 'submit'
+    submitting: boolean
+}
+
+export interface FaqCardProps{
+    faqsList: any
+    idx: any
+}
+
+export interface ListTemplateProps{
+    isLandingPage: boolean
+}
+
+export interface TemplatePaginationProps{
+    page: number;
+    setPage: React.Dispatch<React.SetStateAction<number>>;
+    choose: number;
+    scrollToTop: Function;
 }
