@@ -8,7 +8,7 @@ const Footer = () => {
         <footer className='grid grid-cols-5 w-full '>
             <div></div>
             <div className=" py-10 items-center justify-between sm:flex col-span-3">
-                <p className="text-gray-600 text-sm">© 2024 Videoklik All rights reserved.</p>
+                <p className="text-gray-600 text-sm">© 2024 Videoklik All rights reserved.<br></br><a href='/privacypolicy' target='_blank' className='text-xs text-gray-500'>Privacy Policy</a> <a href='/tnc' target='_blank' className='text-xs text-gray-500'>Terms and Condition</a></p>
                 <div className=" text-gray-400 mt-6 grid grid-cols-3 gap-4 sm:gap-8">
                     <a href={phoneWa} target='_blank' className='mx-auto'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-whatsapp" viewBox="0 0 16 16">
