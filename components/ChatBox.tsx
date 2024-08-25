@@ -6,7 +6,7 @@ const ChatBox: React.FC<{
 }> = ({message, fromOwner}) => {
 
   const stylePanel = fromOwner ? "shrink bg-purple-500 text-white" : "mr-48 bg-gray-300 border border-1 border-gray-400 text-black"
-  const styleDate = fromOwner ? "text-white" : "text-gray-500"
+  // const styleDate = fromOwner ? "text-white" : "text-gray-500"
  
   return (
     <div className={'flex w-full'}>
