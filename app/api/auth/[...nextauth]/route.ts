@@ -14,10 +14,10 @@ const handler = NextAuth({
     ],
     secret:'NextAuthSecret',
     callbacks: {
-        // async redirect({ url, baseUrl }) {
-        //     console.log(url)
-        //     return url
-        //   },
+        async redirect({ url, baseUrl }) {
+            console.log(url)
+            return url
+          },
         async session({ session }) {
 
             if (session.user !== undefined) {
