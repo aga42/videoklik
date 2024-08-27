@@ -31,7 +31,7 @@ const Header = ({ actionLabel }: HeaderProps) => {
         { title: labelTemplate, path: "/template" },
         { title: labelAsset, path: "https://bit.ly/asset-video-aga" },
         { title: labelPricelist, path: "/pricing" },
-        { title: labelTentang, path: "/creator?index=1" }
+        { title: labelTentang, path: "/creator" }
         // { title: labelFaq, path: "/faq" }
     ]
 

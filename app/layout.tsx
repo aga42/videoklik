@@ -1,12 +1,12 @@
 import "../styles/global.css";
 import { Metadata } from "next";
-import { Suspense } from 'react'
+// import { Suspense } from 'react'
 import Provider from "../components/Provider";
 import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Videoklik",
-  description: "Tinggal klak - klik jadi video",
+  description: "Video element generator at your klik",
 };
 
 export default function RootLayout({
@@ -24,9 +24,10 @@ export default function RootLayout({
             {/* <script async data-cfasync="false" src="//thubanoa.com/1?z=7894057"></script> */}
           </head>
           <body>
-          <Suspense fallback={<div>Loading...</div>}>
+          {/* <Suspense fallback={<div>Loading...</div>}>
             {children}
-          </Suspense>
+          </Suspense> */}
+          {children}
           <Script
             src="../tawkto.js"
           ></Script>

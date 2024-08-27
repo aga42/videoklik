@@ -14,6 +14,10 @@ const Plan = () => {
   const cookiesEmail = Cookies.get('email');
 
   const [freeDesc, setFreeDesc] = useState(false)
+  const [isSubmit, setIsSubmit] = useState(false)
+  const [indexPackageChoosen, setIndexPackageChoosen] = useState(0)
+
+  const [isDisable, setIsDisable] = useState(false)
 
   // const plans = [
   //     {
@@ -79,7 +83,6 @@ const Plan = () => {
         }
       }
 
-      console.log(data)
       createTransaction(e, packageName)
 
     } catch (error) {
@@ -122,12 +125,11 @@ const Plan = () => {
     } catch (error) {
       console.log('error gaes')
     } finally {
-      //   setSubmitting(false)
+      
     }
   }
 
   const fetchPayment = async () => {
-    //setIsloading(true)
     await fetch("/api/payment", {
       method: "POST",
       headers: {
@@ -144,10 +146,17 @@ const Plan = () => {
       } else {
         alert(`Error ${res.error}`);
       }
+
+      setIsSubmit(false)
+      setIsDisable(false)
+
     }).catch((e) => {
+      setIsSubmit(false)
+      setIsDisable(false)
       alert(e);
     }).finally(() => {
-      //setIsloading(false)
+      setIsSubmit(false)
+      setIsDisable(false)
     })
   }
 
@@ -247,7 +256,8 @@ const Plan = () => {
                                         ))
                                     }
                                 </ul>
-                  <motion.button className={idx === 2 ? 'px-3 py-3 rounded-lg w-full font-semibold text-sm duration-150 text-white bg-fuchsia-600 hover:bg-fuchsia-500 active:bg-fuchsia-500' : 'px-3 py-3 rounded-lg w-full font-semibold text-sm duration-150 text-white bg-gray-100 hover:bg-gray-50 active:bg-gray-50 border-gray-300 border'}
+                  <motion.button className={idx === 2 ? `px-3 py-3 rounded-lg w-full font-semibold text-sm duration-150 text-white bg-fuchsia-600 hover:bg-fuchsia-500 active:bg-fuchsia-500` : `px-3 py-3 rounded-lg w-full font-semibold text-sm duration-150 text-white bg-gray-100 hover:bg-gray-50 active:bg-gray-50 border-gray-300 border`}
+                    disabled={isDisable}
                     whileHover={{
                       scale: 1.05,
                       transition: { duration: 0.5 }
@@ -260,12 +270,12 @@ const Plan = () => {
                         :
                         providers && Object.values(providers).map((provider: any) => (signIn(provider.id))))  
                     
-                      : generateOrderId(e, item.amount, item.name)
-                    }
+                      : generateOrderId(e, item.amount, item.name); setIsSubmit(true); setIndexPackageChoosen(idx); setIsDisable(true)
+                      }
                     }
                   >
                     {/* COBA SEKARANG<sup className=" text-green-400">*Gratis 7 hari</sup> */}
-                    {idx === 2 ? <p>GET DEALS NOW</p> : <p className="text-gray-500">GET STARTED</p>}
+                    {idx === 2 ? <p>{(isSubmit && indexPackageChoosen === 2) ? "Processing.." : "GET DEALS NOW"}</p> : idx === 1 ? <p className="text-gray-500">{(isSubmit && indexPackageChoosen === 1) ? "Processing.." : "GET STARTED"}</p> : <p className="text-gray-500">GET STARTED</p>}
                   </motion.button>
                   {idx === 0 && freeDesc ?
                     <><p>When you have a videoklik&#39;s account. Free package is added to your account automatically.<a href="/profile" className="text-fuchsia-600"> Check My Profile</a></p></>
